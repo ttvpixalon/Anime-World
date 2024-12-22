@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance | Anime Paradise</title>
+    <style>
+        /* 🌍 Global Styles */
+        @font-face {
+            font-family: 'KanjiStyle';
+            src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'KanjiStyle', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 🛡️ Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: linear-gradient(to right, #121212, #1f1f1f);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #FF4D4D;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #00FFAB;
+        }
+
+        /* ⚙️ Maintenance Section */
+        .maintenance-container {
+            text-align: center;
+            margin: auto;
+            padding: 50px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .maintenance-title {
+            font-size: 3rem;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            animation: pulseText 2s infinite alternate;
+        }
+
+        .maintenance-message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        /* 🔄 Loader Animation */
+        .loader {
+            margin: 30px auto;
+            border: 8px solid #333;
+            border-top: 8px solid #FFD700;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        /* 🌟 Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseText {
+            from {
+                transform: scale(1);
+                text-shadow: 0 0 10px #FFD700;
+            }
+            to {
+                transform: scale(1.05);
+                text-shadow: 0 0 20px #FFD700;
+            }
+        }
+
+        /* ⚡ Footer */
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 20px 0;
+            background: #121212;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🛡️ Header -->
+    <header>
+        <h1>Anime Paradise</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Genres</a>
+        </nav>
+    </header>
+
+    <!-- ⚙️ Maintenance Section -->
+    <section class="maintenance-container">
+        <h1 class="maintenance-title">🚧 Currently in Maintenance 🚧</h1>
+        <p class="maintenance-message">
+            We're working hard to bring you an improved experience.<br>
+            Please check back later. Thank you for your patience!
+        </p>
+        <div class="loader"></div>
+    </section>
+
+    <!-- ⚡ Footer -->
+    <footer>
+        <p>&copy; 2024 Anime Paradise. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
