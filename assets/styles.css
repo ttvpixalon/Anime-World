@@ -1,0 +1,184 @@
+/* 🌍 Global Styles */
+@font-face {
+    font-family: 'KanjiStyle';
+    src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'KanjiStyle', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* 🛡️ Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: #121212;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #FF4D4D;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #00FFAB;
+}
+
+/* 🔍 Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    margin-right: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00FFAB;
+}
+
+.search-bar button {
+    background: #FF4D4D;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 🌟 Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0f0f0f 40%, #1e1e1e 100%);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    z-index: 1;
+    text-shadow: 0 0 10px #00FFAB;
+}
+
+/* 📺 Anime Section */
+.anime-section {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 🖼️ Anime Grid */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* 🎴 Anime Card */
+.anime-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    width: 220px;
+    height: 330px;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.anime-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anime-card .hd-label,
+.anime-card .episode-label,
+.anime-card .sub-label,
+.anime-card .dub-label {
+    position: absolute;
+    background: #FFD700;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'KanjiStyle', sans-serif;
+}
+
+.hd-label { top: 8px; left: 8px; }
+.episode-label { bottom: 50px; left: 8px; background: #6A0DAD; }
+.sub-label { bottom: 25px; left: 8px; background: #FF4D4D; }
+.dub-label { bottom: 25px; left: 60px; background: #00FFAB; }
+
+/* 🚀 Hover Effects */
+.anime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00FFAB;
+}
+
+/* ⚡ Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    background: #121212;
+    color: #888;
+}
