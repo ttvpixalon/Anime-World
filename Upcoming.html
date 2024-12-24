@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dandadan Season 2 Countdown</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>🎬</text></svg>">
+    <style>
+        /* 🌍 Global Styles */
+        @font-face {
+            font-family: 'KanjiStyle';
+            src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'KanjiStyle', sans-serif;
+            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* 🏠 Home Button */
+        .home-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: #FFD700;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .home-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* 🎯 Countdown Timer */
+        .countdown-container {
+            text-align: center;
+            margin: 50px auto;
+            background: rgba(31, 31, 31, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            backdrop-filter: blur(15px);
+            z-index: 5;
+        }
+
+        .countdown-container h2 {
+            font-size: 2.8rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown div {
+            background: rgba(42, 42, 42, 0.7);
+            padding: 20px 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #FFF;
+            min-width: 120px;
+            backdrop-filter: blur(10px);
+        }
+
+        .countdown div span {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        /* 🎈 Floating Questions */
+        .floating-question {
+            position: absolute;
+            color: #FFD700;
+            font-size: 1.2rem;
+            opacity: 0;
+            white-space: nowrap;
+            animation: floatAndFade 15s ease-in-out infinite;
+        }
+
+        @keyframes floatAndFade {
+            0% {
+                transform: translateY(100vh) translateX(-50%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="home-link">← Back to Home</a>
+
+<header>
+    <h1>Dandadan Season 2 Countdown</h1>
+</header>
+
+<section class="countdown-container">
+    <h2>Season 2 Premieres In:</h2>
+    <div class="countdown">
+        <div><span id="days">00</span>Days</div>
+        <div><span id="hours">00</span>Hours</div>
+        <div><span id="minutes">00</span>Minutes</div>
+        <div><span id="seconds">00</span>Seconds</div>
+    </div>
+</section>
+
+<script>
+    // Countdown Timer
+    const releaseDate = new Date('July 1, 2025 00:00:00').getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = releaseDate - now;
+
+        document.getElementById('days').innerText = Math.floor(difference / (1000 * 60 * 60 * 24));
+        document.getElementById('hours').innerText = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById('minutes').innerText = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('seconds').innerText = Math.floor((difference % (1000 * 60)) / 1000);
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Floating Questions
+    const questions = [
+        "What are your theories about the aliens in Dandadan?",
+        "How do you interpret the relationship between Momo and Okarun?",
+        "Which chapter of Dandadan left you most shocked?",
+        "How does Dandadan compare to other supernatural manga?",
+        "What do you think of the art style in Dandadan?",
+        "Who is your favorite character in Dandadan and why?",
+        "What are your predictions for Dandadan Season 2?",
+        "How do you feel about the blend of horror and comedy in Dandadan?",
+        "What unexplained mysteries in Dandadan intrigue you the most?",
+        "How would you rate Dandadan among recent manga series?"
+    ];
+
+    function createFloatingQuestions() {
+        questions.forEach((question, index) => {
+            const div = document.createElement('div');
+            div.className = 'floating-question';
+            div.style.left = `${Math.random() * 100}vw`;
+            div.style.animationDelay = `${Math.random() * 10}s`;
+            div.textContent = question;
+            document.body.appendChild(div);
+        });
+    }
+
+    createFloatingQuestions();
+</script>
+
+</body>
+</html>
