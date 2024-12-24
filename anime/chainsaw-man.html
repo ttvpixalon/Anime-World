@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
     <style>
-        /* General Styles */
+        /* 🌍 Global Anime Page Styles */
+        @font-face {
+            font-family: 'KanjiStyle';
+            src: url('../assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'KanjiStyle', sans-serif;
             background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
             color: #fff;
             margin: 0;
             overflow-x: hidden;
         }
 
+        /* 🛡️ Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -31,40 +39,53 @@
         header h1 {
             font-size: 2.5rem;
             color: #FF4D4D;
+            font-weight: bold;
         }
 
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease-in-out;
         }
 
+        nav a:hover {
+            color: #00FFAB;
+        }
+
+        /* 📺 Anime Header */
         .anime-header {
             text-align: center;
             margin: 30px 0;
         }
 
+        .anime-header h1 {
+            font-size: 2.5rem;
+            color: #FF4D4D;
+            text-shadow: 0 0 10px #FF4D4D;
+        }
+
+        /* 🎥 Video Player */
         .video-container {
             margin: 30px auto;
             max-width: 900px;
+            width: 100%;
             text-align: center;
             background: #1a1a1a;
             padding: 15px;
             border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
-        iframe {
+        .video-container iframe {
             width: 100%;
             height: 500px;
             border-radius: 8px;
             border: none;
         }
 
-        .subtitle-container {
-            margin: 20px auto;
-            text-align: center;
-        }
-
+        /* 🎮 Episode Controls */
         .episode-controls {
             margin: 30px auto;
             max-width: 900px;
@@ -81,16 +102,21 @@
             border-radius: 4px;
             padding: 8px 16px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .episode-controls button:hover {
             background: #D40060;
+            transform: scale(1.1);
         }
 
         .episode-controls button.active {
             background: #6A0DAD;
+            transform: scale(1.1);
         }
 
+        /* 📚 Anime Details */
         .anime-details {
             margin: 50px auto;
             max-width: 900px;
@@ -99,12 +125,28 @@
             background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
         }
 
         .anime-details img {
             width: 250px;
             border-radius: 8px;
             margin-right: 20px;
+        }
+
+        .anime-details .info {
+            flex: 1;
+        }
+
+        .anime-details h2 {
+            font-size: 1.8rem;
+            color: #FFF;
+            margin-bottom: 10px;
+        }
+
+        .anime-details p {
+            font-size: 1rem;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -127,12 +169,8 @@
     <iframe id="video-source" src="https://drive.google.com/file/d/1sGyEEJcRFx1aMhkLCp7LPDQWZALmpjj-/preview" allow="autoplay; fullscreen"></iframe>
 </section>
 
-<section class="subtitle-container">
-    <p><strong>Subtitles:</strong></p>
-    <iframe id="subtitle-frame" src="subtitles/episode1.srt" width="90%" height="100px" style="border: 1px solid #444; background: #1a1a1a; color: #fff;"></iframe>
-</section>
-
 <section class="episode-controls">
+    <!-- Generate 12 Buttons -->
     <script>
         for (let i = 1; i <= 12; i++) {
             document.write(`<button onclick="loadEpisode(${i})">${i}</button>`);
@@ -142,32 +180,34 @@
 
 <section class="anime-details">
     <img src="../assets/chainsawman-cover.jpg" alt="Chainsaw Man Cover">
-    <div>
+    <div class="info">
         <h2>Chainsaw Man</h2>
+        <p><em>チェンソーマン</em></p>
         <p>Denji is a poor young man who will do anything for money, even hunting devils with his pet devil Pochita. But his life changes when he merges with Pochita to become the fearsome Chainsaw Man.</p>
     </div>
 </section>
 
 <script>
     const videoLinks = {
-        1: '1-00Sg8w71MIXQm6E-vLXoBjtAz58JZBA',
-        2: '15jfXbfBMIVSs0E7MeuS44lhKmhNPIyUP'
-    };
-
-    const subtitleLinks = {
-        1: 'subtitles/episode1.srt',
-        2: 'subtitles/episode2.srt'
+        1: '1RdvO5adfDCM81vm0fXqvXO18lRqrk_wC',
+        2: '15aLwjUX0cdzMzivUfSjWjGJKQ2BFvorh',
+        3: '1KgWJPhMeIP4h0xwrEXonjBInAmbl-yMS',
+        4: '1qY7C2UorP9YLbc2P22AT0LQBkVjKu1j3',
+        5: '1EpGkAq_UlH7apzziZoavZEjFgJTZbJxB',
+        6: '1VngoVpzuCQLq67Gc4h_tWFuQUWO7sA9T',
+        7: '1Lu1Qa7lNjscVyJoExvmOiw1UPjx4s18I',
+        8: '1ffS83mzQl5jmhPkoe8Rl3DRS6Bi-axUh',
+        9: '1xmqvu5CqGZzpzpZK6AQf9qJXzYfcdsSP',
+        10: '1WR4ID8kpJeb9L6-0Epf_Vq4PFIzhyuqr',
+        11: '14Z-uw_Sf_gM-yTA0yQMJM97MiuvUdVDE',
+        12: '1ZSs5JCAHz_OCRi7pcOUlxz-d7PciCmGG'
     };
 
     function loadEpisode(episode) {
         const videoSource = document.getElementById('video-source');
-        const subtitleFrame = document.getElementById('subtitle-frame');
         const animeTitle = document.getElementById('anime-title');
-        
         videoSource.src = `https://drive.google.com/file/d/${videoLinks[episode]}/preview`;
-        subtitleFrame.src = subtitleLinks[episode];
         animeTitle.innerText = `Chainsaw Man - Episode ${episode}`;
-        
         document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
     }
