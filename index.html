@@ -361,6 +361,16 @@
             e.preventDefault();
         });
     </script>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+
     
 </body>
 </html>
