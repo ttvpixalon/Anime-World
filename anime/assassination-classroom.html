@@ -170,59 +170,44 @@
 </section>
 
 <section class="video-container">
-    <iframe id="video-source" src="https://drive.google.com/file/d/1-QspZI78J4TYUYb5qxVxDaXcWoFRU8l5/preview" allow="autoplay; fullscreen"></iframe>
+    <iframe 
+        id="video-source"
+        src="https://www.dailymotion.com/embed/playlist/x96boc?ui-start-screen-info=false&ui-logo=false&queue-enable=false"
+        allow="autoplay; fullscreen">
+    </iframe>
 </section>
 
 <section class="episode-controls">
     <script>
+        const playlistBase = 'https://www.dailymotion.com/embed/playlist/x96boc?ui-start-screen-info=false&ui-logo=false&queue-enable=false&video=';
+
+        const videoLinks = {
+            1: 'k5JAWZ3fELYUBCC6TFi',
+            2: 'x7t4p9Example2',
+            3: 'x7t4p9Example3'
+        };
+
         for (let i = 1; i <= 22; i++) {
             document.write(`<button onclick="loadEpisode(${i})">${i}</button>`);
+        }
+
+        function loadEpisode(episode) {
+            document.getElementById('video-source').src = playlistBase + videoLinks[episode];
+            document.getElementById('anime-title').innerText = `Assassination Classroom S1 - Episode ${episode}`;
+            document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
         }
     </script>
 </section>
 
 <section class="anime-details">
-    <img src="../assets/assassination-classroom-cover.jpg" alt="Assassination Classroom Cover">
+    <img src="../assets/assassination-classroom-s1-cover.jpg" alt="Assassination Classroom Cover">
     <div class="info">
         <h2>Assassination Classroom - Season 1</h2>
         <p><em>Ansatsu Kyoushitsu, 暗殺教室</em></p>
-        <p>A strange, powerful octopus-like teacher named Koro-sensei promises to destroy Earth unless a class of misfit students can kill him first. But there's a twist—he's the best teacher they've ever had!</p>
+        <p>A strange, powerful octopus-like teacher named Koro-sensei promises to destroy Earth unless a class of misfit students can kill him first.</p>
     </div>
 </section>
-
-<script>
-    const videoLinks = {
-        1: '1-QspZI78J4TYUYb5qxVxDaXcWoFRU8l5',
-        2: '1-Q0E_gQg9f7PGPjtDFxvoPapltne1SSg',
-        3: '1-GV1zbFNP1b6kdSqT0EF2vo-ql6TUtir',
-        4: '1-FutlrRmdtg52Uf6ShZfruKGo5h9Brdr',
-        5: '1-BskMYh79cnTSJ3UvExRWjOxo7q7RN9P',
-        6: '1Ep6ExampleID',
-        7: '1Ep7ExampleID',
-        8: '1Ep8ExampleID',
-        9: '10_BevUNudSJolAKhpg4IT3cU1w7Xy_QN',
-        10: '10_0cV2X5wiAVt82AgQ7aCKs2h-KCL4y5',
-        11: '10YQPIN1MA2W1x8K4kd6ltwmZKI2fG1E8',
-        12: '10TWbTOmqncqKuqG7u9IStGbqyCkjtYzI',
-        13: '10PqvBAwh-cMtWwbtCcIG-i12IWj35jOp',
-        14: '10O1ZVqDbYB3sjdETBmv4j4OhbAsiTm8F',
-        15: '10ETZd4bK6c7SMn_GMuRwT4Zv8R5r1Zxu',
-        16: '10BA4SUy8z2YGU0Zkxhjn03KBIvMjcKMd',
-        17: '1Ep17ExampleID',
-        18: '1Ep18ExampleID',
-        19: '1Ep19ExampleID',
-        20: '1Ep20ExampleID',
-        21: '1Ep21ExampleID',
-        22: '1Ep22ExampleID'
-    };
-
-    function loadEpisode(episode) {
-        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[episode]}/preview`;
-        document.getElementById('anime-title').innerText = `Assassination Classroom S1 - Episode ${episode}`;
-        document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
-    }
-</script>
 
 </body>
 </html>
