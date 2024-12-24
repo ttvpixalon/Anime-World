@@ -4,156 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Eminence in Shadow S2 | Watch Anime</title>
+    <link rel="stylesheet" href="../assets/anime-episodes.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
-    <style>
-        /* 🌍 Global Anime Page Styles */
-        @font-face {
-            font-family: 'KanjiStyle';
-            src: url('../assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'KanjiStyle', sans-serif;
-            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-            color: #fff;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* 🛡️ Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 30px;
-            background: linear-gradient(to right, #121212, #1f1f1f);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            color: #00FFAB;
-        }
-
-        /* 📺 Anime Header */
-        .anime-header {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .anime-header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            text-shadow: 0 0 10px #FF4D4D;
-        }
-
-        /* 🎥 Video Player */
-        .video-container {
-            margin: 30px auto;
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-container h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        /* 🎮 Episode Controls */
-        .episode-controls {
-            margin: 30px auto;
-            max-width: 900px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .episode-controls button {
-            background: #FF4D4D;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 16px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .episode-controls button:hover {
-            background: #D40060;
-            transform: scale(1.1);
-        }
-
-        .episode-controls button.active {
-            background: #6A0DAD;
-            transform: scale(1.1);
-        }
-
-        /* 📚 Anime Details */
-        .anime-details {
-            margin: 50px auto;
-            max-width: 900px;
-            display: flex;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
-        }
-
-        .anime-details img {
-            width: 250px;
-            border-radius: 8px;
-            margin-right: 20px;
-        }
-
-        .anime-details .info {
-            flex: 1;
-        }
-
-        .anime-details h2 {
-            font-size: 1.8rem;
-            color: #FFF;
-            margin-bottom: 10px;
-        }
-
-        .anime-details p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -166,38 +18,68 @@
     </nav>
 </header>
 
-<section class="anime-header">
-    <h1 id="anime-title">The Eminence in Shadow S2 - Episode 1</h1>
+<!-- 📍 Breadcrumb Navigation -->
+<section class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>•</span>
+    <span>Watching The Eminence in Shadow S2</span>
 </section>
 
-<section class="video-container">
-    <iframe id="video-source" src="https://drive.google.com/file/d/1AANUbTdoGTI3WKmy4d_Nfk11_27e2vLN/preview" allow="autoplay; fullscreen"></iframe>
+<!-- 📦 Anime Container -->
+<section class="anime-container">
+    <div class="episode-list">
+        <h3>Episodes</h3>
+        <ul id="episode-list">
+            <li onclick="loadEpisode(1)" id="episode-1"><span class="episode-number">1:</span> <span class="episode-title">The Hated Classmate</span></li>
+            <li onclick="loadEpisode(2)" id="episode-2"><span class="episode-number">2:</span> <span class="episode-title">Shadow Garden Advances</span></li>
+            <li onclick="loadEpisode(3)" id="episode-3"><span class="episode-number">3:</span> <span class="episode-title">Unforeseen Trap</span></li>
+            <li onclick="loadEpisode(4)" id="episode-4"><span class="episode-number">4:</span> <span class="episode-title">Unexpected Battle</span></li>
+            <li onclick="loadEpisode(5)" id="episode-5"><span class="episode-number">5:</span> <span class="episode-title">The Puppet Master</span></li>
+            <li onclick="loadEpisode(6)" id="episode-6"><span class="episode-number">6:</span> <span class="episode-title">Dark Revelation</span></li>
+            <li onclick="loadEpisode(7)" id="episode-7"><span class="episode-number">7:</span> <span class="episode-title">The Garden Falls</span></li>
+            <li onclick="loadEpisode(8)" id="episode-8"><span class="episode-number">8:</span> <span class="episode-title">Unveiling Secrets</span></li>
+            <li onclick="loadEpisode(9)" id="episode-9"><span class="episode-number">9:</span> <span class="episode-title">The Showdown</span></li>
+            <li onclick="loadEpisode(10)" id="episode-10"><span class="episode-number">10:</span> <span class="episode-title">Shadow Strikes Back</span></li>
+            <li onclick="loadEpisode(11)" id="episode-11"><span class="episode-number">11:</span> <span class="episode-title">The Final Plan</span></li>
+            <li onclick="loadEpisode(12)" id="episode-12"><span class="episode-number">12:</span> <span class="episode-title">Epilogue</span></li>
+        </ul>
+    </div>
+
+    <div class="video-container">
+        <iframe id="video-source" allowfullscreen></iframe>
+    </div>
+
+    <div class="seasons-container">
+        <div class="season-card active" onclick="window.location.href='eminence-shadow-s2.html'">Season 2</div>
+        <div class="season-card" onclick="window.location.href='../Upcoming.html'">Season 3</div>
+    </div>
 </section>
 
-<section class="episode-controls">
-    <button onclick="loadEpisode(1)" class="active">1</button>
-    <button onclick="loadEpisode(2)">2</button>
-    <button onclick="loadEpisode(3)">3</button>
-    <button onclick="loadEpisode(4)">4</button>
-    <button onclick="loadEpisode(5)">5</button>
-    <button onclick="loadEpisode(6)">6</button>
-    <button onclick="loadEpisode(7)">7</button>
-    <button onclick="loadEpisode(8)">8</button>
-    <button onclick="loadEpisode(9)">9</button>
-    <button onclick="loadEpisode(10)">10</button>
-    <button onclick="loadEpisode(11)">11</button>
-    <button onclick="loadEpisode(12)">12</button>
-</section>
-
+<!-- 📚 Anime Details -->
 <section class="anime-details">
     <img src="../assets/eminence-shadow-s2-cover.jpg" alt="The Eminence in Shadow Cover">
     <div class="info">
         <h2>The Eminence in Shadow - Season 2</h2>
-        <p><em>Kage no Jitsuryokusha ni Naritakute! Season 2</em></p>
-        <p>Follow Cid Kagenou as he continues his mysterious journey while crafting a grand narrative from the shadows.</p>
+        <div class="tags">
+            <span>R</span>
+            <span>HD</span>
+            <span>24m</span>
+        </div>
+        <p>
+            Follow Cid Kagenou as he continues his mysterious journey while crafting a grand narrative from the shadows. 
+            With every move, the world becomes more entangled in his carefully crafted plans.
+        </p>
     </div>
 </section>
 
+<!-- 🔐 Right Click Blocker -->
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script>
+
+<!-- 🎥 Video Player Logic -->
 <script>
     const videoLinks = {
         1: '1AANUbTdoGTI3WKmy4d_Nfk11_27e2vLN',
@@ -214,12 +96,14 @@
         12: '1v0cnoeLDxCofWhr8Hud-laeWttt2G3Ap'
     };
 
-    function loadEpisode(episode) {
-        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[episode]}/preview`;
-        document.getElementById('anime-title').innerText = `The Eminence in Shadow S2 - Episode ${episode}`;
-        document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
+    function loadEpisode(ep) {
+        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
+        document.getElementById('anime-title').innerText = `The Eminence in Shadow S2 - Episode ${ep}`;
+        document.querySelectorAll('.episode-list li').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`episode-${ep}`).classList.add('active');
     }
+
+    loadEpisode(1);
 </script>
 
 </body>
