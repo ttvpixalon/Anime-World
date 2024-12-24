@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- 🛡️ Header Section -->
 <header>
     <h1>Anime World</h1>
     <nav>
@@ -27,6 +28,7 @@
 
 <!-- 📦 Anime Container -->
 <section class="anime-container">
+    <!-- 📜 Episode List -->
     <div class="episode-list">
         <h3>Episodes</h3>
         <ul id="episode-list">
@@ -45,11 +47,14 @@
         </ul>
     </div>
 
+    <!-- 🎥 Video Player -->
     <div class="video-container">
         <iframe id="video-source" allowfullscreen></iframe>
     </div>
 
+    <!-- 📚 Season Selector -->
     <div class="seasons-container">
+        <div class="season-card" onclick="window.location.href='eminence-shadow-s1.html'">Season 1</div>
         <div class="season-card active" onclick="window.location.href='eminence-shadow-s2.html'">Season 2</div>
         <div class="season-card" onclick="window.location.href='../Upcoming.html'">Season 3</div>
     </div>
@@ -97,13 +102,20 @@
     };
 
     function loadEpisode(ep) {
-        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
-        document.getElementById('anime-title').innerText = `The Eminence in Shadow S2 - Episode ${ep}`;
-        document.querySelectorAll('.episode-list li').forEach(btn => btn.classList.remove('active'));
+        const videoFrame = document.getElementById('video-source');
+        const animeTitle = document.getElementById('anime-title');
+        const episodeButtons = document.querySelectorAll('.episode-list li');
+
+        videoFrame.src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
+        animeTitle.innerText = `The Eminence in Shadow S2 - Episode ${ep}`;
+
+        episodeButtons.forEach(btn => btn.classList.remove('active'));
         document.getElementById(`episode-${ep}`).classList.add('active');
     }
 
-    loadEpisode(1);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadEpisode(1);
+    });
 </script>
 
 </body>
