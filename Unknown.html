@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unknown Release Date | Anime Paradise</title>
+    <link rel="stylesheet" href="../assets/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
     <style>
         /* 🌍 Global Styles */
@@ -15,7 +16,7 @@
         }
 
         body {
-            font-family: 'KanjiStyle', sans-serif;
+            font-family: 'KanjiStyle', Arial, sans-serif;
             margin: 0;
             background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
             color: #fff;
@@ -82,7 +83,7 @@
             font-size: 1.2rem;
             color: #FFD700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-            font-family: 'KanjiStyle', sans-serif;
+            font-family: 'KanjiStyle', Arial, sans-serif;
             opacity: 0.9;
             animation: float 8s infinite alternate ease-in-out;
         }
@@ -141,7 +142,6 @@
         /* 🔙 Home Button */
         .home-button {
             margin-top: 30px;
-            font-family: 'KanjiStyle', sans-serif;
             font-size: 1.2rem;
             font-weight: bold;
             color: #000;
@@ -159,7 +159,6 @@
             box-shadow: 0 5px 20px rgba(255, 215, 0, 0.6);
         }
 
-        /* ⚡ Footer */
         footer {
             text-align: center;
             margin-top: auto;
@@ -171,43 +170,32 @@
 </head>
 <body>
 
-    <!-- 🛡️ Header -->
-    <header>
-        <h1>Anime Paradise</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="#">Trending</a>
-            <a href="#">Genres</a>
-        </nav>
-    </header>
+<header>
+    <h1>Anime Paradise</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="#">Trending</a>
+        <a href="#">Genres</a>
+    </nav>
+</header>
 
-    <!-- 📅 Unknown Release Section -->
-    <section class="unknown-container">
-        <h1 class="unknown-title">❓ Unknown Release Date ❓</h1>
-        <p class="unknown-message">
-            The release date of this season remains a mystery.<br>
-            Could it be tomorrow, next year, or perhaps never? Only time will tell.
-        </p>
-        <button class="home-button" onclick="window.location.href='../index.html'">🏠 Back to Home</button>
-    </section>
+<section class="unknown-container">
+    <h1 class="unknown-title">❓ Unknown Release Date ❓</h1>
+    <p class="unknown-message">
+        The release date of this season remains a mystery.<br>
+        Could it be tomorrow, next year, or perhaps never? Only time will tell.
+    </p>
+    <button class="home-button" onclick="window.location.href='../index.html'">🏠 Back to Home</button>
+</section>
 
-    <!-- 🌠 Floating Questions -->
-    <div class="floating-question">"Is it worth the wait?"</div>
-    <div class="floating-question">"What secrets will it reveal?"</div>
-    <div class="floating-question">"Will it surpass expectations?"</div>
-    <div class="floating-question">"Is it even in production?"</div>
+<footer>
+    <p>&copy; 2024 Anime Paradise. All rights reserved.</p>
+</footer>
 
-    <!-- ⚡ Footer -->
-    <footer>
-        <p>&copy; 2024 Anime Paradise. All rights reserved.</p>
-    </footer>
-
-    <!-- 🔐 Block Right Click -->
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    </script>
-
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script>
 </body>
 </html>
