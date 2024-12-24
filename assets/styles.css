@@ -17,7 +17,7 @@ body {
     background: #0d0d0d;
     color: #fff;
     overflow-x: hidden;
-    font-size: 16px; /* Default font size */
+    font-size: 16px;
 }
 
 /* 🛡️ Header */
@@ -25,37 +25,54 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background: linear-gradient(to right, #121212, #1f1f1f);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #FF4D4D;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+    text-shadow: 
+        0 0 10px rgba(255, 77, 77, 0.9), 
+        0 0 20px rgba(255, 77, 77, 0.6);
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+header h1:hover {
+    text-shadow: 
+        0 0 15px rgba(255, 77, 77, 1), 
+        0 0 25px rgba(255, 77, 77, 0.9);
+    transform: scale(1.05);
+}
+
+/* 📜 Navigation Menu */
 nav {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: color 0.3s ease-in-out;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 nav a:hover {
-    color: #FFD700;
+    background: #FF4D4D;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
 }
 
 /* 📱 Mobile Menu Toggle */
@@ -67,14 +84,8 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .menu-toggle {
         display: block;
-        margin-left: auto;
     }
 
     nav {
@@ -91,71 +102,44 @@ nav a:hover {
         display: flex;
     }
 
-    header h1 {
-        font-size: 2rem;
+    header {
+        flex-direction: column;
+        align-items: flex-start;
     }
-}
 
-/* 🔍 Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 10px 0;
-}
-
-.search-bar input {
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: none;
-    font-size: 1rem;
-    width: 100%;
-}
-
-.search-bar button {
-    background: #FF4D4D;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.search-bar button:hover {
-    background: #FFD700;
-    color: #000;
+    header h1 {
+        font-size: 2.2rem;
+    }
 }
 
 /* 📚 Anime Grid */
 .anime-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    justify-items: center;
-    margin: 20px auto;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 40px auto;
+    padding: 20px;
     max-width: 1200px;
-}
-
-/* 📱 Mobile Anime Grid Adjustment */
-@media (max-width: 768px) {
-    .anime-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        padding: 5px;
-    }
+    justify-items: center;
+    align-items: start;
 }
 
 /* 🎴 Anime Card */
+.anime-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .anime-card {
     background: #1a1a1a;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     width: 100%;
-    max-width: 200px;
-    height: 300px;
+    max-width: 220px;
+    height: 320px;
     border: 1px solid #333;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
@@ -170,16 +154,54 @@ nav a:hover {
 .anime-card .anime-title {
     background: rgba(0, 0, 0, 0.7);
     color: #FFD700;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     text-align: center;
     padding: 8px;
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    letter-spacing: 1px;
+    border-top: 1px solid #FFD700;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Hover Effect */
 .anime-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+}
+
+.anime-card:hover .anime-title {
+    transform: scale(1.05);
+}
+
+/* 📱 Responsive Adjustments for Grid */
+@media (min-width: 1280px) {
+    .anime-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .anime-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .anime-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .anime-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ⚡ Footer */
