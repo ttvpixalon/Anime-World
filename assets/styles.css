@@ -1,4 +1,4 @@
-/* 🌍 Global Styles */
+/* 🌍 Global Anime Page Styles */
 @font-face {
     font-family: 'KanjiStyle';
     src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
@@ -24,16 +24,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background: #121212;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
-    animation: slideDown 0.8s ease-in-out;
+    border-bottom: 2px solid #FFD700;
+    animation: fadeInDown 0.8s ease-in-out;
 }
 
-@keyframes slideDown {
+@keyframes fadeInDown {
     from {
         transform: translateY(-100%);
         opacity: 0;
@@ -44,141 +45,131 @@ header {
     }
 }
 
+/* 📍 Logo */
 header h1 {
-    font-size: 2rem;
+    font-size: 3.5rem; /* Bigger size for logo */
     color: #FF4D4D;
+    font-weight: bold;
+    text-shadow: 
+        0 0 15px rgba(255, 77, 77, 0.8), 
+        0 0 30px rgba(255, 77, 77, 0.6),
+        0 0 45px rgba(255, 77, 77, 0.4);
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    animation: logoPop 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes logoPop {
+    from {
+        transform: scale(1);
+        text-shadow: 
+            0 0 15px rgba(255, 77, 77, 0.8),
+            0 0 30px rgba(255, 77, 77, 0.6);
+    }
+    to {
+        transform: scale(1.05);
+        text-shadow: 
+            0 0 25px rgba(255, 77, 77, 1),
+            0 0 50px rgba(255, 77, 77, 0.8);
+    }
+}
+
+/* 🌐 Navigation Links */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
+    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease-in-out;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 nav a:hover {
-    color: #00FFAB;
+    color: #FFD700;
+    transform: translateY(-2px) scale(1.1);
+    text-shadow: 
+        0 0 12px #FFD700,
+        0 0 24px #FFD700;
+    background: rgba(255, 215, 0, 0.1);
 }
 
 /* 🔍 Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
-}
-
-.search-bar input {
+    gap: 10px;
+    background: rgba(31, 31, 31, 0.8);
     padding: 8px 12px;
-    border-radius: 4px;
-    border: none;
-    margin-right: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.search-bar input:focus {
+.search-bar:hover {
+    box-shadow: 0 0 15px #FFD700;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    background: #2c2c2c;
+    color: #fff;
+    font-size: 1rem;
     outline: none;
-    box-shadow: 0 0 10px #00FFAB;
+    width: 280px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 15px #FFD700;
+    background: #333;
 }
 
 .search-bar button {
-    background: #FF4D4D;
+    background: linear-gradient(135deg, #FF4D4D, #D40060);
     border: none;
     color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🌟 Hero Section */
-.hero {
-    background: linear-gradient(135deg, #0f0f0f 40%, #1e1e1e 100%);
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero h2 {
-    font-size: 2.8rem;
-    z-index: 1;
-    text-shadow: 0 0 10px #00FFAB;
-}
-
-/* 📺 Anime Section */
-.anime-section {
-    margin: 40px auto;
-    max-width: 1200px;
-    padding: 20px;
-    text-align: center;
-}
-
-/* 🖼️ Anime Grid */
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-/* 🎴 Anime Card */
-.anime-card {
-    background: #1a1a1a;
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    width: 220px;
-    height: 330px;
-    border: 1px solid #333;
-    box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.anime-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.anime-card .hd-label,
-.anime-card .episode-label,
-.anime-card .sub-label,
-.anime-card .dub-label {
-    position: absolute;
-    background: #FFD700;
+.search-bar button:hover {
+    background: linear-gradient(135deg, #FFD700, #FFB400);
     color: #000;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-family: 'KanjiStyle', sans-serif;
+    box-shadow: 0 0 12px #FFD700;
 }
 
-.hd-label { top: 8px; left: 8px; }
-.episode-label { bottom: 50px; left: 8px; background: #6A0DAD; }
-.sub-label { bottom: 25px; left: 8px; background: #FF4D4D; }
-.dub-label { bottom: 25px; left: 60px; background: #00FFAB; }
+/* 🖥️ Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
 
-/* 🚀 Hover Effects */
-.anime-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #00FFAB;
-}
+    nav {
+        margin-top: 10px;
+        gap: 15px;
+    }
 
-/* ⚡ Footer */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px 0;
-    background: #121212;
-    color: #888;
+    .search-bar input {
+        width: 200px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
 }
