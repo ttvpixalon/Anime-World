@@ -3,131 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Release Date Unknown | Anime World</title>
-    <link rel="stylesheet" href="../assets/styles.css">
+    <title>Unknown Release Date | Anime Paradise</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
     <style>
-        /* 🌌 Background Animation */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-            font-family: 'Arial', sans-serif;
-            color: white;
-            overflow: hidden;
+        /* 🌍 Global Styles */
+        @font-face {
+            font-family: 'KanjiStyle';
+            src: url('../assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
         }
 
-        /* ✨ Centered Content */
-        .container {
+        body {
+            font-family: 'KanjiStyle', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+            color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+            min-height: 100vh;
         }
 
-        /* 🎭 Animated Question Mark */
-        .question-mark {
-            font-size: 8rem;
+        /* 🛡️ Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: linear-gradient(to right, #121212, #1f1f1f);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #FF4D4D;
             font-weight: bold;
-            animation: float 3s ease-in-out infinite;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #00FFAB;
+        }
+
+        /* 📅 Unknown Release Section */
+        .unknown-container {
+            text-align: center;
+            margin: auto;
+            padding: 50px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .unknown-title {
+            font-size: 3rem;
             color: #FFD700;
-            text-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            animation: pulseText 2s infinite alternate;
+        }
+
+        .unknown-message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        /* 🌠 Floating Questions */
+        .floating-question {
+            position: absolute;
+            font-size: 1.2rem;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            font-family: 'KanjiStyle', sans-serif;
+            opacity: 0.9;
+            animation: float 8s infinite alternate ease-in-out;
+        }
+
+        .floating-question:nth-child(1) {
+            top: 15%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .floating-question:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-question:nth-child(3) {
+            bottom: 20%;
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        .floating-question:nth-child(4) {
+            bottom: 10%;
+            right: 35%;
+            animation-delay: 1.5s;
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        /* 🎤 Main Message */
-        .message {
-            font-size: 2rem;
-            margin: 20px 0;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
             0% {
-                opacity: 0;
+                transform: translateY(0px);
+                opacity: 0.8;
             }
             100% {
+                transform: translateY(-20px);
                 opacity: 1;
             }
         }
 
-        /* 💬 Sub-Message */
-        .sub-message {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 40px;
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🏠 Back Button */
+        @keyframes pulseText {
+            from {
+                transform: scale(1);
+                text-shadow: 0 0 10px #FFD700;
+            }
+            to {
+                transform: scale(1.05);
+                text-shadow: 0 0 20px #FFD700;
+            }
+        }
+
+        /* 🔙 Home Button */
         .home-button {
-            display: inline-block;
-            padding: 10px 20px;
+            margin-top: 30px;
+            font-family: 'KanjiStyle', sans-serif;
             font-size: 1.2rem;
-            color: white;
-            background: #FF4500;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(to right, #FFD700, #FF4D4D);
+            padding: 10px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            text-decoration: none;
+            text-shadow: 0 0 5px #FFD700;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .home-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px #FF4500;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.6);
         }
 
-        /* 🌟 Background Stars */
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.imgur.com/6O2B8Wh.png') repeat;
-            animation: starsMove 50s linear infinite;
-            z-index: 0;
-        }
-
-        @keyframes starsMove {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 10000px 10000px;
-            }
+        /* ⚡ Footer */
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 20px 0;
+            background: #121212;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-<div class="stars"></div> <!-- 🌟 Star Background -->
+    <!-- 🛡️ Header -->
+    <header>
+        <h1>Anime Paradise</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Genres</a>
+        </nav>
+    </header>
 
-<div class="container">
-    <div class="question-mark">?</div> <!-- 🎭 Animated Question Mark -->
-    <div class="message">Nobody Knows When This Season Will Release!</div>
-    <div class="sub-message">Stay tuned, or perhaps consult the stars... 🪐✨</div>
-    <a href="../index.html" class="home-button">🏠 Back to Home</a>
-</div>
+    <!-- 📅 Unknown Release Section -->
+    <section class="unknown-container">
+        <h1 class="unknown-title">❓ Unknown Release Date ❓</h1>
+        <p class="unknown-message">
+            The release date of this season remains a mystery.<br>
+            Could it be tomorrow, next year, or perhaps never? Only time will tell.
+        </p>
+        <button class="home-button" onclick="window.location.href='../index.html'">🏠 Back to Home</button>
+    </section>
 
-<script>
-    // 🪄 Optional Interaction Script
-    const questionMark = document.querySelector('.question-mark');
-    questionMark.addEventListener('mouseover', () => {
-        questionMark.style.transform = 'scale(1.2)';
-    });
-    questionMark.addEventListener('mouseout', () => {
-        questionMark.style.transform = 'scale(1)';
-    });
-</script>
+    <!-- 🌠 Floating Questions -->
+    <div class="floating-question">"Is it worth the wait?"</div>
+    <div class="floating-question">"What secrets will it reveal?"</div>
+    <div class="floating-question">"Will it surpass expectations?"</div>
+    <div class="floating-question">"Is it even in production?"</div>
+
+    <!-- ⚡ Footer -->
+    <footer>
+        <p>&copy; 2024 Anime Paradise. All rights reserved.</p>
+    </footer>
+
+    <!-- 🔐 Block Right Click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
 </body>
 </html>
