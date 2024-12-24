@@ -51,7 +51,6 @@
         <div class="season-card active" onclick="window.location.href='dandadan.html'">Season 1</div>
         <div class="season-card" onclick="window.location.href='../Upcoming.html'">Season 2</div>
     </div>
-    
 </section>
 
 <section class="anime-details">
@@ -69,6 +68,14 @@
     </div>
 </section>
 
+<!-- 🔐 Right Click Blocker -->
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script>
+
+<!-- 🎥 Video Player Logic -->
 <script>
     const videoLinks = {
         1: '16gUkTsEspcONTTKLgc8xLH0vs6XYIjvF',
@@ -87,20 +94,12 @@
 
     function loadEpisode(ep) {
         document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
-        document.getElementById('anime-title').innerText = `DANDADAN - Episode ${ep}`;
         document.querySelectorAll('.episode-list li').forEach(btn => btn.classList.remove('active'));
         document.getElementById(`episode-${ep}`).classList.add('active');
     }
 
+    // Load default episode
     loadEpisode(1);
 </script>
-
-<script>
-    // Block right-click on the entire webpage
-    document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-    });
-</script>
-
 </body>
 </html>

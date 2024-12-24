@@ -4,159 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicious in Dungeon | Watch Anime</title>
+    <link rel="stylesheet" href="../assets/anime-episodes.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
-    <style>
-        /* 🌍 Global Anime Page Styles */
-        @font-face {
-            font-family: 'KanjiStyle';
-            src: url('../assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'KanjiStyle', sans-serif;
-            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-            color: #fff;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* 🛡️ Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 30px;
-            background: linear-gradient(to right, #121212, #1f1f1f);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            color: #00FFAB;
-        }
-
-        /* 📺 Anime Header */
-        .anime-header {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .anime-header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            text-shadow: 0 0 10px #FF4D4D;
-        }
-
-        /* 🎥 Video Player */
-        .video-container {
-            margin: 30px auto;
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-container h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        /* 🎮 Episode Controls */
-        .episode-controls {
-            margin: 30px auto;
-            max-width: 900px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .episode-controls button {
-            background: #FF4D4D;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 16px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .episode-controls button:hover {
-            background: #D40060;
-            transform: scale(1.1);
-        }
-
-        .episode-controls button.active {
-            background: #6A0DAD;
-            transform: scale(1.1);
-        }
-
-        /* 📚 Anime Details */
-        .anime-details {
-            margin: 50px auto;
-            max-width: 900px;
-            display: flex;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
-        }
-
-        .anime-details img {
-            width: 250px;
-            border-radius: 8px;
-            margin-right: 20px;
-        }
-
-        .anime-details .info {
-            flex: 1;
-        }
-
-        .anime-details h2 {
-            font-size: 1.8rem;
-            color: #FFF;
-            margin-bottom: 10px;
-        }
-
-        .anime-details p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
 
+<!-- 🛡️ Header Section -->
 <header>
     <h1>Anime World</h1>
     <nav>
@@ -166,35 +19,71 @@
     </nav>
 </header>
 
-<section class="anime-header">
-    <h1 id="anime-title">Delicious in Dungeon - Episode 1</h1>
+<!-- 📍 Breadcrumb Navigation -->
+<section class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>•</span>
+    <span>Watching Delicious in Dungeon</span>
 </section>
 
-<section class="video-container">
-    <iframe id="video-source" src="https://drive.google.com/file/d/1LySUt-4Ff-fbMz8s4kRrAKVfZLdopqG5/preview" allow="autoplay; fullscreen"></iframe>
+<!-- 📦 Anime Container -->
+<section class="anime-container">
+    <!-- 📜 Episode List -->
+    <div class="episode-list">
+        <h3>Episodes</h3>
+        <ul id="episode-list">
+            <li onclick="loadEpisode(1)" id="episode-1"><span class="episode-number">1:</span> <span class="episode-title">The Adventurers' Meal</span></li>
+            <li onclick="loadEpisode(2)" id="episode-2"><span class="episode-number">2:</span> <span class="episode-title">Mushroom Trap</span></li>
+            <li onclick="loadEpisode(3)" id="episode-3"><span class="episode-number">3:</span> <span class="episode-title">Dragon Roast</span></li>
+            <li onclick="loadEpisode(4)" id="episode-4"><span class="episode-number">4:</span> <span class="episode-title">Treasure Hunt</span></li>
+            <li onclick="loadEpisode(5)" id="episode-5"><span class="episode-number">5:</span> <span class="episode-title">Dungeon Diet</span></li>
+            <li onclick="loadEpisode(6)" id="episode-6"><span class="episode-number">6:</span> <span class="episode-title">Cooking a Basilisk</span></li>
+            <li onclick="loadEpisode(7)" id="episode-7"><span class="episode-number">7:</span> <span class="episode-title">Spices and Secrets</span></li>
+            <li onclick="loadEpisode(8)" id="episode-8"><span class="episode-number">8:</span> <span class="episode-title">Giant Crab Feast</span></li>
+            <li onclick="loadEpisode(9)" id="episode-9"><span class="episode-number">9:</span> <span class="episode-title">Goblin Stew</span></li>
+            <li onclick="loadEpisode(10)" id="episode-10"><span class="episode-number">10:</span> <span class="episode-title">The King's Banquet</span></li>
+            <li onclick="loadEpisode(11)" id="episode-11"><span class="episode-number">11:</span> <span class="episode-title">Fire Dragon's Meal</span></li>
+            <li onclick="loadEpisode(12)" id="episode-12"><span class="episode-number">12:</span> <span class="episode-title">The Dungeon's End</span></li>
+            <li onclick="loadEpisode(13)" id="episode-13"><span class="episode-number">13:</span> <span class="episode-title">New Allies</span></li>
+            <li onclick="loadEpisode(14)" id="episode-14"><span class="episode-number">14:</span> <span class="episode-title">Cooking Under Pressure</span></li>
+            <li onclick="loadEpisode(15)" id="episode-15"><span class="episode-number">15:</span> <span class="episode-title">A Feast Fit for Heroes</span></li>
+            <li onclick="loadEpisode(16)" id="episode-16"><span class="episode-number">16:</span> <span class="episode-title">Surprise Ingredients</span></li>
+            <li onclick="loadEpisode(17)" id="episode-17"><span class="episode-number">17:</span> <span class="episode-title">Dungeon Crisis</span></li>
+            <li onclick="loadEpisode(18)" id="episode-18"><span class="episode-number">18:</span> <span class="episode-title">Bizarre Recipes</span></li>
+            <li onclick="loadEpisode(19)" id="episode-19"><span class="episode-number">19:</span> <span class="episode-title">Beast Meat Extravaganza</span></li>
+            <li onclick="loadEpisode(20)" id="episode-20"><span class="episode-number">20:</span> <span class="episode-title">The Last Ingredient</span></li>
+            <li onclick="loadEpisode(21)" id="episode-21"><span class="episode-number">21:</span> <span class="episode-title">Final Battle Feast</span></li>
+            <li onclick="loadEpisode(22)" id="episode-22"><span class="episode-number">22:</span> <span class="episode-title">Dragon's Secret Recipe</span></li>
+            <li onclick="loadEpisode(23)" id="episode-23"><span class="episode-number">23:</span> <span class="episode-title">Escape from the Lair</span></li>
+            <li onclick="loadEpisode(24)" id="episode-24"><span class="episode-number">24:</span> <span class="episode-title">A New Journey</span></li>
+        </ul>
+    </div>
+
+    <!-- 🎥 Video Player -->
+    <div class="video-container">
+        <iframe id="video-source" allowfullscreen></iframe>
+    </div>
+
+    <!-- 📚 Season Selector -->
+    <div class="seasons-container">
+        <div class="season-card active" onclick="window.location.href='delicious-in-dungeon.html'">Season 1</div>
+        <div class="season-card" onclick="window.location.href='../Upcoming.html'">Season 2</div>
+    </div>
 </section>
 
-<section class="episode-controls">
-    <!-- Generate 24 Buttons -->
-    <script>
-        for (let i = 1; i <= 24; i++) {
-            document.write(`<button onclick="loadEpisode(${i})">${i}</button>`);
-        }
-    </script>
-</section>
-
+<!-- 📚 Anime Details -->
 <section class="anime-details">
     <img src="../assets/delicious-in-dungeon-cover.jpg" alt="Delicious in Dungeon Cover">
     <div class="info">
         <h2>Delicious in Dungeon</h2>
-        <p><em>Dungeon Meshi, ダンジョン飯</em></p>
-        <p>After losing their comrade to a dragon, a group of adventurers venture back into the dungeon. With limited supplies, they must now rely on cooking monsters for survival!</p>
+        <p>
+            After losing their comrade to a dragon, a group of adventurers venture back into the dungeon. With limited supplies, they must now rely on cooking monsters for survival!
+        </p>
     </div>
 </section>
 
 <script>
-    const videoLinks = {
-        1: '1LySUt-4Ff-fbMz8s4kRrAKVfZLdopqG5',
+    const videoLinks = { 1: '1LySUt-4Ff-fbMz8s4kRrAKVfZLdopqG5',
         2: '1vTJT2ern_k5Ebydo7S22niMrktDQ54qB',
         3: '1mPM5aySOFTw5Zf60hNjAuLvU4tvblzz4',
         4: '1oJ34NqeVDkpP52vTnNzzp4TZ_k3MhZqW',
@@ -217,18 +106,13 @@
         21: '1nXhTckyyDJrigsUNGYPaR-Qhm-BFjJEW',
         22: '1fctSgjXxxYv9bRRu8175J91L6aTXbbgG',
         23: '1q2gFxSivcMRBhkbV5eEIcaizvClAGkvg',
-        24: '1wawRM-MxT3astOdzEt6IB8fnyfYReF7i'
-    };
-
-    function loadEpisode(episode) {
-        const videoSource = document.getElementById('video-source');
-        const animeTitle = document.getElementById('anime-title');
-        videoSource.src = `https://drive.google.com/file/d/${videoLinks[episode]}/preview`;
-        animeTitle.innerText = `Delicious in Dungeon - Episode ${episode}`;
-        document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
+        24: '1wawRM-MxT3astOdzEt6IB8fnyfYReF7i' };
+    function loadEpisode(ep) {
+        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
+        document.querySelectorAll('#episode-list li').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`episode-${ep}`).classList.add('active');
     }
+    loadEpisode(1);
 </script>
-
 </body>
 </html>

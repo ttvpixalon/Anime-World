@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Date Unknown | Anime World</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        /* 🌌 Background Animation */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* ✨ Centered Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 🎭 Animated Question Mark */
+        .question-mark {
+            font-size: 8rem;
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+            color: #FFD700;
+            text-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* 🎤 Main Message */
+        .message {
+            font-size: 2rem;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* 💬 Sub-Message */
+        .sub-message {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        /* 🏠 Back Button */
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: #FF4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .home-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #FF4500;
+        }
+
+        /* 🌟 Background Stars */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/6O2B8Wh.png') repeat;
+            animation: starsMove 50s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes starsMove {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 10000px 10000px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="stars"></div> <!-- 🌟 Star Background -->
+
+<div class="container">
+    <div class="question-mark">?</div> <!-- 🎭 Animated Question Mark -->
+    <div class="message">Nobody Knows When This Season Will Release!</div>
+    <div class="sub-message">Stay tuned, or perhaps consult the stars... 🪐✨</div>
+    <a href="../index.html" class="home-button">🏠 Back to Home</a>
+</div>
+
+<script>
+    // 🪄 Optional Interaction Script
+    const questionMark = document.querySelector('.question-mark');
+    questionMark.addEventListener('mouseover', () => {
+        questionMark.style.transform = 'scale(1.2)';
+    });
+    questionMark.addEventListener('mouseout', () => {
+        questionMark.style.transform = 'scale(1)';
+    });
+</script>
+</body>
+</html>

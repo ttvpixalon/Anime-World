@@ -102,26 +102,13 @@
     };
 
     function loadEpisode(ep) {
-        const videoFrame = document.getElementById('video-source');
-        const animeTitle = document.getElementById('anime-title');
-        const episodeButtons = document.querySelectorAll('.episode-list li');
-
-        videoFrame.src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
-        animeTitle.innerText = `The Eminence in Shadow S2 - Episode ${ep}`;
-
-        // Highlight active episode
-        episodeButtons.forEach(btn => btn.classList.remove('active'));
-        const activeEpisode = document.getElementById(`episode-${ep}`);
-        if (activeEpisode) {
-            activeEpisode.classList.add('active');
-        }
+        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
+        document.querySelectorAll('.episode-list li').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`episode-${ep}`).classList.add('active');
     }
 
     // Load default episode
-    document.addEventListener('DOMContentLoaded', () => {
-        loadEpisode(1);
-    });
+    loadEpisode(1);
 </script>
-
 </body>
 </html>
