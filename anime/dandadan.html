@@ -4,156 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dandadan | Watch Anime</title>
+    <link rel="stylesheet" href="../assets/anime-episodes.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
-    <style>
-        /* 🌍 Global Anime Page Styles */
-        @font-face {
-            font-family: 'KanjiStyle';
-            src: url('../assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'KanjiStyle', sans-serif;
-            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-            color: #fff;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* 🛡️ Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 30px;
-            background: linear-gradient(to right, #121212, #1f1f1f);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            color: #00FFAB;
-        }
-
-        /* 📺 Anime Header */
-        .anime-header {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .anime-header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            text-shadow: 0 0 10px #FF4D4D;
-        }
-
-        /* 🎥 Video Player */
-        .video-container {
-            margin: 30px auto;
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-container h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        /* 🎮 Episode Controls */
-        .episode-controls {
-            margin: 30px auto;
-            max-width: 900px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .episode-controls button {
-            background: #FF4D4D;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 16px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .episode-controls button:hover {
-            background: #D40060;
-            transform: scale(1.1);
-        }
-
-        .episode-controls button.active {
-            background: #6A0DAD;
-            transform: scale(1.1);
-        }
-
-        /* 📚 Anime Details */
-        .anime-details {
-            margin: 50px auto;
-            max-width: 900px;
-            display: flex;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
-        }
-
-        .anime-details img {
-            width: 250px;
-            border-radius: 8px;
-            margin-right: 20px;
-        }
-
-        .anime-details .info {
-            flex: 1;
-        }
-
-        .anime-details h2 {
-            font-size: 1.8rem;
-            color: #FFF;
-            margin-bottom: 10px;
-        }
-
-        .anime-details p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -166,35 +18,53 @@
     </nav>
 </header>
 
-<section class="anime-header">
-    <h1 id="anime-title">DANDADAN - Episode 1</h1>
+<section class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>•</span>
+    <span>Watching Dandadan</span>
 </section>
 
-<section class="video-container">
-    <iframe id="video-source" src="https://drive.google.com/file/d/16gUkTsEspcONTTKLgc8xLH0vs6XYIjvF/preview" allow="autoplay; fullscreen"></iframe>
-</section>
+<section class="anime-container">
+    <div class="episode-list">
+        <h3>Episodes</h3>
+        <ul id="episode-list">
+            <li onclick="loadEpisode(1)" id="episode-1"><span class="episode-number">1:</span> <span class="episode-title">That's How Love Starts, Ya Know!</span></li>
+            <li onclick="loadEpisode(2)" id="episode-2"><span class="episode-number">2:</span> <span class="episode-title">That's A Space Alien, Ain't It?!</span></li>
+            <li onclick="loadEpisode(3)" id="episode-3"><span class="episode-number">3:</span> <span class="episode-title">Granny Clash!</span></li>
+            <li onclick="loadEpisode(4)" id="episode-4"><span class="episode-number">4:</span> <span class="episode-title">Merge! Serpo Dover Demon Nessie!</span></li>
+            <li onclick="loadEpisode(5)" id="episode-5"><span class="episode-number">5:</span> <span class="episode-title">First Love</span></li>
+            <li onclick="loadEpisode(6)" id="episode-6"><span class="episode-number">6:</span> <span class="episode-title">Let's Go to the Cursed House</span></li>
+            <li onclick="loadEpisode(7)" id="episode-7"><span class="episode-number">7:</span> <span class="episode-title">Yabê Onna Ga Kita</span></li>
+            <li onclick="loadEpisode(8)" id="episode-8"><span class="episode-number">8:</span> <span class="episode-title">Yasashii Sekai E</span></li>
+            <li onclick="loadEpisode(9)" id="episode-9"><span class="episode-number">9:</span> <span class="episode-title">Merge Again!</span></li>
+            <li onclick="loadEpisode(10)" id="episode-10"><span class="episode-number">10:</span> <span class="episode-title">Unexpected Encounter</span></li>
+            <li onclick="loadEpisode(11)" id="episode-11"><span class="episode-number">11:</span> <span class="episode-title">Last Battle!</span></li>
+            <li onclick="loadEpisode(12)" id="episode-12"><span class="episode-number">12:</span> <span class="episode-title">Eternal Promise</span></li>
+        </ul>
+    </div>
 
-<section class="episode-controls">
-    <button onclick="loadEpisode(1)" class="active">1</button>
-    <button onclick="loadEpisode(2)">2</button>
-    <button onclick="loadEpisode(3)">3</button>
-    <button onclick="loadEpisode(4)">4</button>
-    <button onclick="loadEpisode(5)">5</button>
-    <button onclick="loadEpisode(6)">6</button>
-    <button onclick="loadEpisode(7)">7</button>
-    <button onclick="loadEpisode(8)">8</button>
-    <button onclick="loadEpisode(9)">9</button>
-    <button onclick="loadEpisode(10)">10</button>
-    <button onclick="loadEpisode(11)">11</button>
-    <button onclick="loadEpisode(12)">12</button>
+    <div class="video-container">
+        <iframe id="video-source" allowfullscreen></iframe>
+    </div>
+
+    <div class="seasons-container">
+        <div class="season-card active" onclick="window.location.href='season1.html'">Season 1</div>
+        <div class="season-card" onclick="window.location.href='season2.html'">Season 2</div>
+    </div>
 </section>
 
 <section class="anime-details">
     <img src="../assets/dandadan-cover.jpg" alt="Dandadan Cover">
     <div class="info">
         <h2>DANDADAN</h2>
-        <p><em>Dandadan, Danadan, ダンダダン</em></p>
-        <p>Reeling from her recent breakup, Momo Ayase, a popular high schooler...</p>
+        <div class="tags">
+            <span>PG-13</span>
+            <span>HD</span>
+            <span>24m</span>
+        </div>
+        <p>
+            After encountering a space alien and a ghost, Momo Ayase, a high schooler, and her eccentric classmate Okarun dive into a supernatural world. Together, they face bizarre phenomena while uncovering secrets of the unknown.
+        </p>
     </div>
 </section>
 
@@ -214,12 +84,21 @@
         12: '1zu_zCCuizN1lWtwRwZ9vMgOLB9BXLveM'
     };
 
-    function loadEpisode(episode) {
-        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[episode]}/preview`;
-        document.getElementById('anime-title').innerText = `DANDADAN - Episode ${episode}`;
-        document.querySelectorAll('.episode-controls button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.episode-controls button')[episode - 1].classList.add('active');
+    function loadEpisode(ep) {
+        document.getElementById('video-source').src = `https://drive.google.com/file/d/${videoLinks[ep]}/preview`;
+        document.getElementById('anime-title').innerText = `DANDADAN - Episode ${ep}`;
+        document.querySelectorAll('.episode-list li').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`episode-${ep}`).classList.add('active');
     }
+
+    loadEpisode(1);
+</script>
+
+<script>
+    // Block right-click on the entire webpage
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 </script>
 
 </body>
