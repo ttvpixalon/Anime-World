@@ -1,248 +1,354 @@
-/* 🌍 Global Anime Page Styles */
-@font-face {
-    font-family: 'KanjiStyle';
-    src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+/* 🌍 Global Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-* {
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+/* 🔴 Top Navigation Menu */
+.top-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-menu .search-button {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.top-menu .search-button img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.top-menu .search-button:hover img {
+    transform: scale(1.2);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'KanjiStyle', sans-serif;
-    background: #0d0d0d;
+.nav-menu li a {
     color: #fff;
-    overflow-x: hidden;
-    font-size: 16px;
-}
-
-/* 🛡️ Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #121212, #1f1f1f);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-header h1 {
-    font-size: 2.8rem;
-    color: #FF4D4D;
+    padding: 8px 15px;
+    border-radius: 20px;
     font-weight: bold;
-    text-shadow: 
-        0 0 10px rgba(255, 77, 77, 0.9), 
-        0 0 20px rgba(255, 77, 77, 0.6);
-    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header h1:hover {
-    text-shadow: 
-        0 0 15px rgba(255, 77, 77, 1), 
-        0 0 25px rgba(255, 77, 77, 0.9);
+.nav-menu li.active a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* 🎬 Hero Section */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 60px;
+    margin-top: 0; /* Removed margin to ensure video starts at the very top */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Ensures the video is behind content and above any black background */
+    filter: brightness(50%);
+}
+
+
+/* Cloudy Fade Effect */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Adjust fade length */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 3;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-play {
+    background-color: #e50914;
+    color: #fff;
+}
+
+.btn-play:hover {
+    background-color: #b20710;
     transform: scale(1.05);
 }
 
-/* 📜 Navigation Menu */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-}
-
-nav a:hover {
-    background: #FF4D4D;
+.btn-info {
+    background-color: rgba(255, 255, 255, 0.8);
     color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
 }
 
-/* 📱 Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
+.btn-info:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+/* 📺 Anime Rows */
+.anime-section {
+    padding: 40px 20px;
+    background: #141414;
+}
+
+.anime-section h2 {
     font-size: 2rem;
-    color: #FFD700;
-    cursor: pointer;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    font-weight: bold;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background: #1a1a1a;
-        width: 100%;
-        border-radius: 8px;
-        padding: 15px;
-    }
-
-    nav.active {
-        display: flex;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-}
-
-/* 📚 Anime Grid */
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 1200px;
-    justify-items: center;
-    align-items: start;
-}
-
-/* 🎴 Anime Card */
-.anime-card-container {
+.anime-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    gap: 15px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden; /* Fixes vertical scroll issue */
 }
 
 .anime-card {
-    background: #1a1a1a;
-    border-radius: 12px;
+    flex: 0 0 auto;
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background-color: #141414;
+    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    width: 100%;
-    max-width: 220px;
-    height: 320px;
-    border: 1px solid #333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform; /* Optimizes scaling animation */
 }
 
 .anime-card img {
     width: 100%;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
-}
-
-.anime-card .anime-title {
-    background: rgba(0, 0, 0, 0.7);
-    color: #FFD700;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 8px;
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
-    letter-spacing: 1px;
-    border-top: 1px solid #FFD700;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
 .anime-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
 }
 
-.anime-card:hover .anime-title {
-    transform: scale(1.05);
-}
-
-/* 📱 Responsive Adjustments for Grid */
-@media (min-width: 1280px) {
-    .anime-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-@media (max-width: 1279px) and (min-width: 1024px) {
-    .anime-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-    .anime-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .anime-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .anime-grid {
-        grid-template-columns: 1fr;
-    }
+.anime-card:hover img {
+    transform: scale(1.1);
 }
 
 /* ⚡ Footer */
 footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px 0;
-    background: #121212;
+    padding: 20px;
+    background-color: #141414;
     color: #888;
-    font-size: 1rem;
-    font-weight: bold;
-    text-shadow: 0 0 5px #FFD700;
+    font-size: 0.9rem;
+}
+/* 🔍 Search Bar */
+.search-bar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 50%;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1002; /* Above all content */
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
 }
 
-/* 📍 Breadcrumb Navigation */
-.breadcrumb {
-    font-size: 1.2rem;
-    color: #ccc;
-    margin: 10px 20px;
+.search-bar.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when visible */
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: #222;
+    color: #fff;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-bar button:hover {
+    background-color: #b20710;
+}
+
+/* ✨ Blur Effect for Entire Site */
+.blur-content {
+    filter: blur(8px);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: none; /* Prevent interaction when blurred */
+}
+
+.blur-content.active {
+    pointer-events: auto;
+}
+/* 🔍 Search Results Dropdown */
+.search-results {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-height: 300px; /* More space for results */
+    overflow-y: auto; /* Enable scrolling if too many results */
+    display: none; /* Hidden until results appear */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 1003; /* Above search bar */
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Styling for each anime result */
+.search-results li {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.breadcrumb a {
-    color: #FFD700;
-    text-decoration: none;
+.search-results li:last-child {
+    border-bottom: none;
+}
+
+/* Anime thumbnail in the search results */
+.search-results li img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Anime title styling */
+.search-results li span {
+    font-size: 1rem;
     font-weight: bold;
-    transition: color 0.3s ease;
+    flex-grow: 1;
 }
 
-.breadcrumb a:hover {
-    color: #FF4D4D;
+/* Hover effect for dropdown results */
+.search-results li:hover {
+    background: #e50914;
 }
 
-.breadcrumb span {
-    color: #888;
-}
 
-.breadcrumb::before {
-    content: '📍';
-    color: #FFD700;
-    margin-right: 5px;
-}

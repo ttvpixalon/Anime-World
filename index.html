@@ -5,372 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Paradise</title>
     <link rel="stylesheet" href="assets/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90%' font-size='90'>💽</text></svg>">
-
-    <style>
-        @font-face {
-            font-family: 'KanjiStyle';
-            src: url('assets/fonts/JiayouAkira-MAVEY.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* 🌍 General Styles */
-        body {
-            font-family: 'KanjiStyle', sans-serif;
-            background: #0d0d0d;
-            color: #fff;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* 🛡️ Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 30px;
-            background: linear-gradient(to right, #121212, #1f1f1f);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #FF4D4D;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            color: #00FFAB;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-bar input {
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: none;
-            margin-right: 5px;
-        }
-
-        .search-bar button {
-            background: #FF4D4D;
-            border: none;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* 🎥 Hero Section with Video Background */
-        .hero {
-            position: relative;
-            height: 450px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5); /* Slight overlay for contrast */
-            z-index: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-            color: #FFD700;
-            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
-            animation: pulseText 2s infinite alternate;
-        }
-
-        .hero-content h2 {
-            font-size: 4rem;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        @keyframes pulseText {
-            from {
-                transform: scale(1);
-                text-shadow: 0 0 10px #FFD700;
-            }
-            to {
-                transform: scale(1.05);
-                text-shadow: 0 0 20px #FFD700;
-            }
-        }
-
-        /* 📺 Anime Section */
-        .anime-section {
-            margin: 40px auto;
-            max-width: 1200px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .anime-section h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #FFD700;
-        }
-
-        .anime-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
-
-        .anime-card-container {
-            text-align: center;
-        }
-
-        .anime-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-            width: 220px;
-            height: 330px;
-            border: 1px solid #333;
-            box-shadow: 0 0 15px rgba(0, 255, 171, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .anime-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .anime-card .hd-label {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: #FFD700;
-            color: #000;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .anime-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #fff;
-        }
-
-        .anime-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #00FFAB;
-        }
-
-        /* ⚡ Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px 0;
-            background: #121212;
-            color: #888;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- 🛡️ Header -->
-    <header>
-        <h1>Anime Paradise</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Trending</a>
-            <a href="#">Genres</a>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search Anime..." onkeyup="searchAnime()">
-            <button onclick="searchAnime()">Search</button>
-        </div>
-    </header>
+    <!-- 🔴 Top Navigation Menu -->
+    <nav class="top-menu">
+        <button class="search-button">
+            <img src="assets/icons/search.png" alt="Search">
+        </button>
+        <ul class="nav-menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+    </nav>
 
-    <!-- 🌟 Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop>
-            <source src="assets/videos/DANDADAN-Opening.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h2>Welcome to Anime Paradise</h2>
-        </div>
-    </section>
+    <!-- ✅ Wrap all content inside this div for the blur effect -->
+    <div id="pageContent">
 
-    <!-- 📺 Anime Section -->
-    <section class="anime-section">
-        <h2>Popular Anime</h2>
-        <div class="anime-grid">
-            <!-- Existing Cards -->
-            <div class="anime-card-container">
-                <a href="anime/dandadan.html">
-                    <div class="anime-card">
-                        <img src="assets/dandadan-cover.jpg" alt="Dandadan">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Dandadan</div>
+        <!-- 🎬 Hero Section -->
+        <section class="hero">
+            <video autoplay muted loop>
+                <source src="assets/videos/dandadantrailer.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1>DANDADAN</h1>
+                <h3 class="subtitle">#1 in Anime Today</h3>
+                <p class="description">A high schooler and her eccentric classmate face supernatural chaos as they dive into a bizarre world of aliens and spirits.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-play">▶ Play</button>
+                    <button class="btn btn-info">More Info</button>
+                </div>
             </div>
+        </section>
 
-            <!-- New Anime Card -->
-            <div class="anime-card-container">
-                <a href="anime/eminence-shadow-s2.html">
-                    <div class="anime-card">
-                        <img src="assets/eminence-shadow-s2-cover.jpg" alt="The Eminence in Shadow - Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Eminence In The Shadow S2</div>
+        <!-- 📺 Anime Rows -->
+        <section class="anime-section">
+            <h2>New This Week</h2>
+            <div class="anime-row">
+                <div class="anime-card"><img src="assets/images/assassination-classroom-cover.jpg" alt="Assassination Classroom"></div>
+                <div class="anime-card"><img src="assets/images/kaiju-no8-cover.jpg" alt="Kaiju No.8"></div>
+                <div class="anime-card"><img src="assets/images/death-note-cover.jpg" alt="Death Note"></div>
+                <div class="anime-card"><img src="assets/images/bluelock-s2-cover.jpg" alt="Blue Lock S2"></div>
             </div>
-            <div class="anime-card-container">
-                <a href="anime/delicious-in-dungeon.html">
-                    <div class="anime-card">
-                        <img src="assets/delicious-in-dungeon-cover.jpg" alt="Delicious In Dungeon">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Delicious In Dungeon</div>
+        </section>
+
+        <section class="anime-section">
+            <h2>Trending Now</h2>
+            <div class="anime-row">
+                <div class="anime-card"><img src="assets/images/chainsawman-cover.jpg" alt="Chainsaw Man"></div>
+                <div class="anime-card"><img src="assets/images/eminence-shadow-s2-cover.jpg" alt="Eminence in Shadow"></div>
+                <div class="anime-card"><img src="assets/images/mob-psycho3-cover.jpg" alt="Mob Psycho III"></div>
+                <div class="anime-card"><img src="assets/images/delicious-in-dungeon-cover.jpg" alt="Delicious in Dungeon"></div>
             </div>
-            <div class="anime-card-container">
-                <a href="anime/assassination-classroom.html">
-                    <div class="anime-card">
-                        <img src="assets/assassination-classroom-cover.jpg" alt="Assassination Classroom">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Assassination Classroom</div>
+        </section>
+
+        <section class="anime-section">
+            <h2>Action Packed</h2>
+            <div class="anime-row">
+                <div class="anime-card"><img src="assets/images/dandadan-cover.jpg" alt="Dandadan"></div>
+                <div class="anime-card"><img src="assets/images/mashle-magics2.jpg" alt="Mashle: Magic and Muscles"></div>
+                <div class="anime-card"><img src="assets/images/KakeguruiCoverAnime.jpg" alt="Kakegurui"></div>
+                <div class="anime-card"><img src="assets/images/dragonball-daima-cover.jpg" alt="Dragon Ball Daima"></div>
             </div>
-            <div class="anime-card-container">
-                <a href="anime/hellsing.html">
-                    <div class="anime-card">
-                        <img src="assets/hellsing-cover.jpg" alt="Hellsing">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Hellsing</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="anime/chainsaw-man.html">
-                    <div class="anime-card">
-                        <img src="assets/chainsawman-cover.jpg" alt="Chainsaw Man">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Chainsaw Man</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="anime/Kaiju No.8.html">
-                    <div class="anime-card">
-                        <img src="assets/kaiju-no8-cover.jpg" alt="Kaiju No.8">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Kaiju No.8</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="Maintenence.html">
-                    <div class="anime-card">
-                        <img src="assets/mashle-magics2.jpg" alt="Mashle: Magic and Muscles Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Mashle: Magic and Muscles Season 2</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="Maintenence.html">
-                    <div class="anime-card">
-                        <img src="assets/bluelock-s2-cover.jpg" alt="Mashle: Magic and Muscles Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Blue Lock S2</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="Maintenence.html">
-                    <div class="anime-card">
-                        <img src="assets/death-note-cover.jpg" alt="Mashle: Magic and Muscles Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Death Note</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="Maintenence.html">
-                    <div class="anime-card">
-                        <img src="assets/KakeguruiCoverAnime.jpg" alt="Mashle: Magic and Muscles Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Kakegurui</div>
-            </div>
-            <div class="anime-card-container">
-                <a href="Maintenence.html">
-                    <div class="anime-card">
-                        <img src="assets/mob-psycho3-cover.jpg" alt="Mashle: Magic and Muscles Season 2">
-                        <span class="hd-label">HD</span>
-                    </div>
-                </a>
-                <div class="anime-title">Mob Psycho III</div>
-            </div>
-        </div>
-    </section>
+        </section>
+
+    </div> <!-- ✅ Closing pageContent div -->
+
+ <!-- Search Bar -->
+<div id="searchBar" class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for an anime...">
+    <button>Search</button>
+    <ul id="searchResults" class="search-results"></ul> <!-- Dropdown list for results -->
+</div>
+
+
 
     <!-- ⚡ Footer -->
     <footer>
-        <p>&copy; 2024 Anime Paradise. All rights reserved.</p>
+        <p>&copy; 2025 Anime Paradise. All Rights Reserved.</p>
     </footer>
+<!-- Link to external JavaScript file -->
+<script src="home.js"></script>
 
-    <script>
-        // Block right-click on the entire webpage
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    </script>
-
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-</script>
-
-    
 </body>
 </html>
