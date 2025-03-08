@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Top Navigation Menu -->
+  <!-- 🔴 Top Navigation Menu -->
   <nav class="top-menu">
     <button class="search-button">
       <img src="assets/icons/search.png" alt="Search">
@@ -21,10 +21,10 @@
     </ul>
   </nav>
 
-  <!-- Page Content -->
+  <!-- ✅ Wrap all content inside this div -->
   <div id="pageContent">
 
-    <!-- Hero Section -->
+    <!-- 🎬 Hero Section -->
     <section class="hero">
       <video autoplay muted loop>
         <source src="assets/videos/dandadantrailer.mp4" type="video/mp4">
@@ -42,11 +42,10 @@
       </div>
     </section>
 
-    <!-- Anime Rows Section -->
+    <!-- 📺 Anime Rows -->
     <section class="anime-section">
       <h2>New This Week</h2>
       <div class="anime-row">
-        <!-- Example: Invincible; add more cards as desired -->
         <a href="invincible.html" class="anime-card">
           <img src="assets/images/invincible-cover.jpg" alt="Invincible">
         </a>
@@ -103,14 +102,29 @@
 
   </div> <!-- End pageContent -->
 
-  <!-- Search Bar -->
+  <!-- 🔍 Search Bar -->
   <div id="searchBar" class="search-bar">
     <input type="text" id="searchInput" placeholder="Search for an anime...">
     <button>Search</button>
-    <ul id="searchResults" class="search-results"></ul>
+    <ul id="searchResults" class="search-results">
+      <!-- Example search results: clicking these anchors will navigate to the corresponding page -->
+      <li>
+        <a href="invincible.html">
+          <img src="assets/images/invincible-cover.jpg" alt="Invincible">
+          <span>Invincible</span>
+        </a>
+      </li>
+      <li>
+        <a href="assassination.html">
+          <img src="assets/images/assassination-classroom-cover.jpg" alt="Assassination Classroom">
+          <span>Assassination Classroom</span>
+        </a>
+      </li>
+      <!-- Add additional search result items as needed -->
+    </ul>
   </div>
 
-  <!-- Footer -->
+  <!-- ⚡ Footer -->
   <footer>
     <p>&copy; 2025 Anime Paradise. All Rights Reserved.</p>
   </footer>

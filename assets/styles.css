@@ -55,12 +55,11 @@
     border-radius: 20px;
     font-weight: bold;
     transition: background 0.3s, color 0.3s;
-    /* Faint white glow */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
   }
   
   .nav-menu li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255,255,255,0.2);
   }
   
   .nav-menu li.active a {
@@ -99,6 +98,17 @@
     animation: fadeIn 1s ease;
   }
   
+  /* ================= Glass Panels ================= */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    margin: 0 auto;
+    animation: slideUp var(--transition-speed) ease;
+  }
+  
   /* ================= Hero Section ================= */
   .hero {
     position: relative;
@@ -128,7 +138,7 @@
     left: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(20,20,20,1) 100%);
     z-index: 2;
     pointer-events: none;
   }
@@ -145,14 +155,14 @@
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--accent-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   }
   
   .subtitle {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #f2f2f2;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   }
   
   .description {
@@ -188,12 +198,12 @@
   }
   
   .btn-info {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255,255,255,0.8);
     color: #000;
   }
   
   .btn-info:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255,255,255,1);
     transform: scale(1.05);
   }
   
@@ -214,7 +224,7 @@
   .anime-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 10px; /* Reduced gap for a closer look */
     padding: 10px 20px;
     justify-items: center;
     animation: fadeIn 1s ease;
@@ -240,11 +250,7 @@
   
   .anime-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
-  }
-  
-  .anime-card:hover img {
-    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.3);
   }
   
   .anime-caption {
@@ -261,7 +267,7 @@
     text-shadow: 0 0 5px rgba(255,255,255,0.5);
   }
   
-  /* ================= Search Bar ================= */
+  /* ================= Search Bar and Results ================= */
   .search-bar {
     position: fixed;
     top: 50%;
@@ -271,7 +277,7 @@
     padding: 15px 20px;
     background: rgba(0, 0, 0, 0.9);
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     text-align: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 1002;
@@ -309,6 +315,57 @@
   
   .search-bar button:hover {
     background: #b20710;
+  }
+  
+  .search-results {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 1003;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .search-results li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .search-results li:last-child {
+    border-bottom: none;
+  }
+  
+  .search-results li:hover {
+    background: #e50914;
+  }
+  
+  .search-results li img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .search-results li span {
+    font-size: 1rem;
+    font-weight: bold;
+    flex-grow: 1;
   }
   
   /* ================= Footer ================= */
