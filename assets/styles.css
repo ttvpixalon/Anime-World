@@ -1,152 +1,173 @@
-/* 🌍 Global Styles */
-body {
+/* ================= Global Styles ================= */
+:root {
+    --primary-color: #e50914;
+    --background-color: #000;
+    --accent-color: #fff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-color: #fff;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --transition-speed: 0.5s;
+  }
+  
+  * {
     margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-a {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    background: var(--background-color);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    overflow-x: hidden;
+  }
+  
+  a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease-in-out;
-}
-
-h1, h2 {
-    margin: 0;
-}
-
-/* 🔴 Top Navigation Menu */
-.top-menu {
+    transition: color 0.3s ease;
+  }
+  
+  /* ================= Top Navigation Menu ================= */
+  .top-menu {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.top-menu .search-button {
+    z-index: 1000;
+    background: transparent;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  .nav-menu li a {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    /* Faint white glow */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .nav-menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-menu li.active a {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+  }
+  
+  .search-button {
     position: absolute;
     left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: transparent;
     border: none;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.top-menu .search-button img {
+    transition: transform 0.3s ease;
+  }
+  
+  .search-button img {
     width: 20px;
     height: 20px;
     filter: brightness(0) invert(1);
     transition: transform 0.3s ease;
-}
-
-.top-menu .search-button:hover img {
+  }
+  
+  .search-button:hover img {
     transform: scale(1.2);
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu li a {
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu li.active a {
-    background-color: #fff;
-    color: #000;
-}
-
-/* 🎬 Hero Section */
-.hero {
+  }
+  
+  /* ================= Main Layout ================= */
+  main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 20px 50px; /* extra top padding to account for fixed nav */
+    animation: fadeIn 1s ease;
+  }
+  
+  /* ================= Hero Section ================= */
+  .hero {
     position: relative;
     height: 90vh;
     display: flex;
     align-items: flex-end;
     padding: 40px 60px;
-    margin-top: 0; /* Removed margin to ensure video starts at the very top */
     overflow: hidden;
-    z-index: 1;
-}
-
-.hero video {
+    animation: fadeIn 1s ease;
+  }
+  
+  .hero video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* Ensures the video is behind content and above any black background */
     filter: brightness(50%);
-}
-
-
-/* Cloudy Fade Effect */
-.hero::after {
+    z-index: 0;
+  }
+  
+  .hero::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%; /* Adjust fade length */
+    height: 20%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 100%);
     z-index: 2;
     pointer-events: none;
-}
-
-.hero-content {
+  }
+  
+  .hero-content {
     position: relative;
     max-width: 600px;
     z-index: 3;
-}
-
-.hero-content h1 {
+    animation: slideUp 1s ease;
+  }
+  
+  .hero-content h1 {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--accent-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.subtitle {
+  }
+  
+  .subtitle {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #f2f2f2;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.description {
+  }
+  
+  .description {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
     color: #ccc;
-}
-
-.hero-buttons {
+  }
+  
+  .hero-buttons {
     display: flex;
     gap: 15px;
-}
-
-.hero-buttons .btn {
+  }
+  
+  .hero-buttons .btn {
     padding: 12px 30px;
     border: none;
     border-radius: 5px;
@@ -154,89 +175,94 @@ h1, h2 {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-play {
-    background-color: #e50914;
+  }
+  
+  .btn-play {
+    background-color: var(--primary-color);
     color: #fff;
-}
-
-.btn-play:hover {
+  }
+  
+  .btn-play:hover {
     background-color: #b20710;
     transform: scale(1.05);
-}
-
-.btn-info {
+  }
+  
+  .btn-info {
     background-color: rgba(255, 255, 255, 0.8);
     color: #000;
-}
-
-.btn-info:hover {
+  }
+  
+  .btn-info:hover {
     background-color: rgba(255, 255, 255, 1);
     transform: scale(1.05);
-}
-
-/* 📺 Anime Rows */
-.anime-section {
+  }
+  
+  /* ================= Anime Rows (Netflix Style) ================= */
+  .anime-section {
     padding: 40px 20px;
     background: #141414;
-}
-
-.anime-section h2 {
+    animation: slideUp 1s ease;
+  }
+  
+  .anime-section h2 {
     font-size: 2rem;
     margin-bottom: 15px;
     padding-left: 20px;
     font-weight: bold;
-}
-
-.anime-row {
-    display: flex;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    gap: 15px;
-    padding: 10px;
-    position: relative;
-    overflow: hidden; /* Fixes vertical scroll issue */
-}
-
-.anime-card {
-    flex: 0 0 auto;
-    position: relative;
-    width: 200px;
-    height: 300px;
-    background-color: #141414;
+  }
+  
+  .anime-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 10px 20px;
+    justify-items: center;
+    animation: fadeIn 1s ease;
+  }
+  
+  .anime-card {
+    width: 220px;
+    height: 320px;
+    background: #141414;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; /* Optimizes scaling animation */
-}
-
-.anime-card img {
+    position: relative;
+  }
+  
+  .anime-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-}
-
-.anime-card:hover {
-    transform: scale(1.1);
+  }
+  
+  .anime-card:hover {
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
-}
-
-.anime-card:hover img {
-    transform: scale(1.1);
-}
-
-/* ⚡ Footer */
-footer {
+  }
+  
+  .anime-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .anime-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
-    padding: 20px;
-    background-color: #141414;
-    color: #888;
-    font-size: 0.9rem;
-}
-/* 🔍 Search Bar */
-.search-bar {
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
+  
+  /* ================= Search Bar ================= */
+  .search-bar {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -248,107 +274,87 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 1002; /* Above all content */
+    z-index: 1002;
     opacity: 0;
-    pointer-events: none; /* Prevent interaction when hidden */
-}
-
-.search-bar.active {
+    pointer-events: none;
+  }
+  
+  .search-bar.active {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-    pointer-events: auto; /* Enable interaction when visible */
-}
-
-.search-bar input {
+    pointer-events: auto;
+  }
+  
+  .search-bar input {
     width: 80%;
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
     border-radius: 20px;
-    outline: none;
     background: #222;
-    color: #fff;
-}
-
-.search-bar button {
+    color: var(--accent-color);
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #e50914;
+    background: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-left: 10px;
-}
-
-.search-bar button:hover {
-    background-color: #b20710;
-}
-
-/* ✨ Blur Effect for Entire Site */
-.blur-content {
-    filter: blur(8px);
-    transition: filter 0.3s ease-in-out;
-    pointer-events: none; /* Prevent interaction when blurred */
-}
-
-.blur-content.active {
-    pointer-events: auto;
-}
-/* 🔍 Search Results Dropdown */
-.search-results {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    background: rgba(30, 30, 30, 0.95);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    max-height: 300px; /* More space for results */
-    overflow-y: auto; /* Enable scrolling if too many results */
-    display: none; /* Hidden until results appear */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    z-index: 1003; /* Above search bar */
-    text-align: left;
-    font-size: 1rem;
-}
-
-/* Styling for each anime result */
-.search-results li {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.search-results li:last-child {
-    border-bottom: none;
-}
-
-/* Anime thumbnail in the search results */
-.search-results li img {
-    width: 50px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* Anime title styling */
-.search-results li span {
-    font-size: 1rem;
-    font-weight: bold;
-    flex-grow: 1;
-}
-
-/* Hover effect for dropdown results */
-.search-results li:hover {
-    background: #e50914;
-}
-
-
+    transition: background 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background: #b20710;
+  }
+  
+  /* ================= Footer ================= */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #141414;
+    color: #888;
+    font-size: 0.9rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  /* ================= Keyframe Animations ================= */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ================= Responsive ================= */
+  @media (max-width: 768px) {
+    .nav-container {
+      gap: 10px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    .anime-row {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .anime-card {
+      width: 180px;
+      height: 280px;
+    }
+    .search-bar {
+      width: 80%;
+    }
+  }
+  

@@ -1,94 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Paradise</title>
-    <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Paradise</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-    <!-- 🔴 Top Navigation Menu -->
-    <nav class="top-menu">
-        <button class="search-button">
-            <img src="assets/icons/search.png" alt="Search">
-        </button>
-        <ul class="nav-menu">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">My List</a></li>
-        </ul>
-    </nav>
+  <!-- Top Navigation Menu -->
+  <nav class="top-menu">
+    <button class="search-button">
+      <img src="assets/icons/search.png" alt="Search">
+    </button>
+    <ul class="nav-menu">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="tvshows.html">TV Shows</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="mylist.html">My List</a></li>
+    </ul>
+  </nav>
 
-    <!-- ✅ Wrap all content inside this div for the blur effect -->
-    <div id="pageContent">
+  <!-- Page Content -->
+  <div id="pageContent">
 
-        <!-- 🎬 Hero Section -->
-        <section class="hero">
-            <video autoplay muted loop>
-                <source src="assets/videos/dandadantrailer.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1>DANDADAN</h1>
-                <h3 class="subtitle">#1 in Anime Today</h3>
-                <p class="description">A high schooler and her eccentric classmate face supernatural chaos as they dive into a bizarre world of aliens and spirits.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-play">▶ Play</button>
-                    <button class="btn btn-info">More Info</button>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="assets/videos/dandadantrailer.mp4" type="video/mp4">
+      </video>
+      <div class="hero-content">
+        <h1>DANDADAN</h1>
+        <h3 class="subtitle">#1 in Anime Today</h3>
+        <p class="description">
+          A high schooler and her eccentric classmate face supernatural chaos as they dive into a bizarre world of aliens and spirits.
+        </p>
+        <div class="hero-buttons">
+          <a href="dandadan.html" class="btn btn-play">▶ Play</a>
+          <a href="dandadan.html" class="btn btn-info">More Info</a>
+        </div>
+      </div>
+    </section>
 
-        <!-- 📺 Anime Rows -->
-        <section class="anime-section">
-            <h2>New This Week</h2>
-            <div class="anime-row">
-                <div class="anime-card"><img src="assets/images/assassination-classroom-cover.jpg" alt="Assassination Classroom"></div>
-                <div class="anime-card"><img src="assets/images/kaiju-no8-cover.jpg" alt="Kaiju No.8"></div>
-                <div class="anime-card"><img src="assets/images/death-note-cover.jpg" alt="Death Note"></div>
-                <div class="anime-card"><img src="assets/images/bluelock-s2-cover.jpg" alt="Blue Lock S2"></div>
-            </div>
-        </section>
+    <!-- Anime Rows Section -->
+    <section class="anime-section">
+      <h2>New This Week</h2>
+      <div class="anime-row">
+        <!-- Example: Invincible; add more cards as desired -->
+        <a href="invincible.html" class="anime-card">
+          <img src="assets/images/invincible-cover.jpg" alt="Invincible">
+        </a>
+        <a href="assassination.html" class="anime-card">
+          <img src="assets/images/assassination-classroom-cover.jpg" alt="Assassination Classroom">
+        </a>
+        <a href="kaiju.html" class="anime-card">
+          <img src="assets/images/kaiju-no8-cover.jpg" alt="Kaiju No.8">
+        </a>
+        <a href="deathnote.html" class="anime-card">
+          <img src="assets/images/death-note-cover.jpg" alt="Death Note">
+        </a>
+      </div>
+    </section>
 
-        <section class="anime-section">
-            <h2>Trending Now</h2>
-            <div class="anime-row">
-                <div class="anime-card"><img src="assets/images/chainsawman-cover.jpg" alt="Chainsaw Man"></div>
-                <div class="anime-card"><img src="assets/images/eminence-shadow-s2-cover.jpg" alt="Eminence in Shadow"></div>
-                <div class="anime-card"><img src="assets/images/mob-psycho3-cover.jpg" alt="Mob Psycho III"></div>
-                <div class="anime-card"><img src="assets/images/delicious-in-dungeon-cover.jpg" alt="Delicious in Dungeon"></div>
-            </div>
-        </section>
+    <section class="anime-section">
+      <h2>Trending Now</h2>
+      <div class="anime-row">
+        <a href="chainsawman.html" class="anime-card">
+          <img src="assets/images/chainsawman-cover.jpg" alt="Chainsaw Man">
+        </a>
+        <a href="eminence.html" class="anime-card">
+          <img src="assets/images/eminence-shadow-s2-cover.jpg" alt="Eminence in Shadow">
+        </a>
+        <a href="mobpsycho.html" class="anime-card">
+          <img src="assets/images/mob-psycho3-cover.jpg" alt="Mob Psycho III">
+        </a>
+        <a href="delicious.html" class="anime-card">
+          <img src="assets/images/delicious-in-dungeon-cover.jpg" alt="Delicious in Dungeon">
+        </a>
+      </div>
+    </section>
 
-        <section class="anime-section">
-            <h2>Action Packed</h2>
-            <div class="anime-row">
-                <div class="anime-card"><img src="assets/images/dandadan-cover.jpg" alt="Dandadan"></div>
-                <div class="anime-card"><img src="assets/images/mashle-magics2.jpg" alt="Mashle: Magic and Muscles"></div>
-                <div class="anime-card"><img src="assets/images/KakeguruiCoverAnime.jpg" alt="Kakegurui"></div>
-                <div class="anime-card"><img src="assets/images/dragonball-daima-cover.jpg" alt="Dragon Ball Daima"></div>
-                <div class="anime-card"><img src="assets/images/hellsing-cover.jpg" alt="hellsing-cover"></div>
-            </div>
-        </section>
+    <section class="anime-section">
+      <h2>Action Packed</h2>
+      <div class="anime-row">
+        <a href="dandadan.html" class="anime-card">
+          <img src="assets/images/dandadan-cover.jpg" alt="Dandadan">
+        </a>
+        <a href="mashle.html" class="anime-card">
+          <img src="assets/images/mashle-magics2.jpg" alt="Mashle: Magic and Muscles">
+        </a>
+        <a href="kakegurui.html" class="anime-card">
+          <img src="assets/images/KakeguruiCoverAnime.jpg" alt="Kakegurui">
+        </a>
+        <a href="dragonball.html" class="anime-card">
+          <img src="assets/images/dragonball-daima-cover.jpg" alt="Dragon Ball Daima">
+        </a>
+        <a href="hellsing.html" class="anime-card">
+          <img src="assets/images/hellsing-cover.jpg" alt="Hellsing">
+        </a>
+      </div>
+    </section>
 
-    </div> <!-- ✅ Closing pageContent div -->
+  </div> <!-- End pageContent -->
 
- <!-- Search Bar -->
-<div id="searchBar" class="search-bar">
+  <!-- Search Bar -->
+  <div id="searchBar" class="search-bar">
     <input type="text" id="searchInput" placeholder="Search for an anime...">
     <button>Search</button>
-    <ul id="searchResults" class="search-results"></ul> <!-- Dropdown list for results -->
-</div>
+    <ul id="searchResults" class="search-results"></ul>
+  </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Anime Paradise. All Rights Reserved.</p>
+  </footer>
 
-
-    <!-- ⚡ Footer -->
-    <footer>
-        <p>&copy; 2025 Anime Paradise. All Rights Reserved.</p>
-    </footer>
-<!-- Link to external JavaScript file -->
-<script src="home.js"></script>
-
+  <script src="home.js"></script>
 </body>
 </html>
