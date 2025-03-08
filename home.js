@@ -18,7 +18,8 @@ const animeList = [
     { title: "Dandadan", image: "assets/images/dandadan-cover.jpg" },
     { title: "Mashle: Magic and Muscles", image: "assets/images/mashle-magics2.jpg" },
     { title: "Kakegurui", image: "assets/images/KakeguruiCoverAnime.jpg" },
-    { title: "Dragon Ball Daima", image: "assets/images/dragonball-daima-cover.jpg" }
+    { title: "Dragon Ball Daima", image: "assets/images/dragonball-daima-cover.jpg" },
+    { title: "Hellsing", image: "assets/images/hellsing-cover.jpg" }
 ];
 
 // ✅ **Fix: Toggle search bar & blur effect when clicking search button**

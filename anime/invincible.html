@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invincible - Watch Anime (Season 3)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for search icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-8RmBrh5HCdOsud8F9+pID4UqA+rVY6cLxThGJil70yjF+F2hZRG2UyzObkS9KPTDHGGKHL0iF3Z7fQqg2RcvSA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/assets/anime-episodes.css">
+</head>
+<body>
+  <!-- Header with centered navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <i class="fa fa-search search-icon"></i>
+      </div>
+      <ul class="nav-center">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="my-netflix.html">My Netflix</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Video Player Section -->
+    <section class="video-section">
+      <div class="player-container glass">
+        <div style="position:relative; padding-top:56.25%;">
+          <iframe 
+            src="https://iframe.mediadelivery.net/embed/392693/15bbf9cb-9166-427a-a0dc-6b037fb5a1ff?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+            loading="lazy"
+            style="border:0; position:absolute; top:0; height:100%; width:100%;"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowfullscreen="true">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Episodes Section with Season Selector -->
+    <section class="episodes-section glass">
+      <nav class="season-tabs" role="tablist" aria-label="Seasons">
+        <button role="tab" id="season1-tab" aria-selected="false" aria-controls="season1-panel">Season 1</button>
+        <button role="tab" id="season2-tab" aria-selected="false" aria-controls="season2-panel">Season 2</button>
+        <button role="tab" id="season3-tab" aria-selected="true" aria-controls="season3-panel">Season 3</button>
+      </nav>
+      <div class="season-panels">
+        <div class="season-panel" role="tabpanel" id="season1-panel" aria-labelledby="season1-tab" hidden>
+          <ul class="episodes-list" id="episodesList-s1">
+            <!-- Insert Season 1 episodes here -->
+            <li>
+              <div class="episode-thumb">
+                <img src="images/s1-episode1-thumb.jpg" alt="S1 Episode 1">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 1: [S1] Pilot</h3>
+                <p>Introduction to the world of Invincible.</p>
+              </div>
+            </li>
+            <!-- ... -->
+          </ul>
+        </div>
+        <div class="season-panel" role="tabpanel" id="season2-panel" aria-labelledby="season2-tab" hidden>
+          <ul class="episodes-list" id="episodesList-s2">
+            <!-- Insert Season 2 episodes here -->
+            <li>
+              <div class="episode-thumb">
+                <img src="images/s2-episode1-thumb.jpg" alt="S2 Episode 1">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 1: [S2] New Beginnings</h3>
+                <p>Mark faces fresh challenges as his powers evolve.</p>
+              </div>
+            </li>
+            <!-- ... -->
+          </ul>
+        </div>
+        <div class="season-panel" role="tabpanel" id="season3-panel" aria-labelledby="season3-tab">
+          <ul class="episodes-list" id="episodesList-s3">
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode1-thumb.jpg" alt="Episode 1">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 1: A New Dawn</h3>
+                <p>The final season kicks off with unexpected twists.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode2-thumb.jpg" alt="Episode 2">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 2: Breaking Points</h3>
+                <p>The stakes are higher as alliances shift.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode3-thumb.jpg" alt="Episode 3">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 3: Collision Course</h3>
+                <p>Old enemies resurface in a clash of ideals.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode4-thumb.jpg" alt="Episode 4">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 4: Fractured Realms</h3>
+                <p>Reality bends as heroes and villains collide.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode5-thumb.jpg" alt="Episode 5">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 5: Edge of Despair</h3>
+                <p>Every decision becomes a matter of survival.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode6-thumb.jpg" alt="Episode 6">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 6: Shattered Truths</h3>
+                <p>The final secrets begin to unravel.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode7-thumb.jpg" alt="Episode 7">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 7: The Reckoning</h3>
+                <p>An all-out battle sets the course for destiny.</p>
+              </div>
+            </li>
+            <li>
+              <div class="episode-thumb">
+                <img src="images/episode8-thumb.jpg" alt="Episode 8">
+              </div>
+              <div class="episode-text">
+                <h3>Episode 8: Into the Abyss</h3>
+                <p>The final confrontation looms on the horizon.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Show Info Section -->
+    <section class="show-info glass">
+      <div class="show-info-header">
+        <img src="images/invincible-poster.jpg" alt="Invincible Poster" class="show-poster">
+        <div class="show-info-details">
+          <h1 id="showTitle">Invincible</h1>
+          <div class="show-ratings">
+            <span class="rating-badge" data-badge="PG-13">PG-13</span>
+            <span class="rating-badge" data-badge="HD">HD</span>
+            <span class="rating-badge" data-badge="8.5">8.5</span>
+            <span class="rating-badge" data-badge="TV-14">TV-14</span>
+            <span class="rating-badge" data-badge="45m">45m</span>
+          </div>
+          <p id="showDesc">
+            Invincible follows Mark Grayson as he navigates the challenges of being the son of the world's most powerful superhero. In Season 3, the stakes have never been higher as dark secrets unravel and new threats emerge.
+          </p>
+        </div>
+      </div>
+      <p class="show-info-extra">
+        Watch Invincible Season 3 in stunning HD and witness the epic conclusion of a legendary saga.
+      </p>
+    </section>
+
+    <!-- More Animes Section -->
+    <section class="more-animes glass">
+      <h2>More Animes</h2>
+      <div class="animes-grid">
+        <div 
+          class="anime-item"
+          data-title="The Boys Season 2"
+          data-ratings="R,HD,8,7,60m"
+          data-desc="The Boys return with even darker twists in Season 2."
+          data-japanese="ザ・ボーイズ シーズン2"
+          data-synonyms="The Boys S2"
+          data-aired="Feb 15, 2023"
+          data-status="Completed"
+          data-genres="Action, Drama, Thriller"
+        >
+          <img src="images/anime1.jpg" alt="The Boys Season 2">
+          <div class="anime-caption">The Boys S2</div>
+          <div class="hover-info">
+            <h3 id="hoverTitle">Title Here</h3>
+            <div class="hover-ratings" id="hoverRatings"></div>
+            <p id="hoverDesc"></p>
+            <p><strong>Japanese:</strong> <span id="hoverJapanese"></span></p>
+            <p><strong>Synonyms:</strong> <span id="hoverSynonyms"></span></p>
+            <p><strong>Aired:</strong> <span id="hoverAired"></span></p>
+            <p><strong>Status:</strong> <span id="hoverStatus"></span></p>
+            <p><strong>Genres:</strong> <span id="hoverGenres"></span></p>
+            <button class="watch-now-btn">Watch now</button>
+          </div>
+        </div>
+
+        <div 
+          class="anime-item"
+          data-title="Invincible: Origins"
+          data-ratings="PG-13,HD,8,TV-14,45m"
+          data-desc="A prequel to Invincible, exploring the origins of the heroes."
+          data-japanese="インヴィンシブル: オリジンズ"
+          data-synonyms="Invincible Origins"
+          data-aired="Mar 10, 2023"
+          data-status="Completed"
+          data-genres="Action, Animation, Sci-Fi"
+        >
+          <img src="images/anime2.jpg" alt="Invincible: Origins">
+          <div class="anime-caption">Invincible: Origins</div>
+          <div class="hover-info">
+            <h3 id="hoverTitle">Title Here</h3>
+            <div class="hover-ratings" id="hoverRatings"></div>
+            <p id="hoverDesc"></p>
+            <p><strong>Japanese:</strong> <span id="hoverJapanese"></span></p>
+            <p><strong>Synonyms:</strong> <span id="hoverSynonyms"></span></p>
+            <p><strong>Aired:</strong> <span id="hoverAired"></span></p>
+            <p><strong>Status:</strong> <span id="hoverStatus"></span></p>
+            <p><strong>Genres:</strong> <span id="hoverGenres"></span></p>
+            <button class="watch-now-btn">Watch now</button>
+          </div>
+        </div>
+
+        <div 
+          class="anime-item"
+          data-title="Anime 3"
+          data-ratings="R,HD,7,TV-14,50m"
+          data-desc="Short description about Anime 3..."
+          data-japanese="アニメ3"
+          data-synonyms="Anime 3"
+          data-aired="TBD"
+          data-status="Upcoming"
+          data-genres="Mystery, Thriller"
+        >
+          <img src="images/anime3.jpg" alt="Anime 3">
+          <div class="anime-caption">Anime 3</div>
+          <div class="hover-info">
+            <h3 id="hoverTitle">Title Here</h3>
+            <div class="hover-ratings" id="hoverRatings"></div>
+            <p id="hoverDesc"></p>
+            <p><strong>Japanese:</strong> <span id="hoverJapanese"></span></p>
+            <p><strong>Synonyms:</strong> <span id="hoverSynonyms"></span></p>
+            <p><strong>Aired:</strong> <span id="hoverAired"></span></p>
+            <p><strong>Status:</strong> <span id="hoverStatus"></span></p>
+            <p><strong>Genres:</strong> <span id="hoverGenres"></span></p>
+            <button class="watch-now-btn">Watch now</button>
+          </div>
+        </div>
+
+        <div 
+          class="anime-item"
+          data-title="Anime 4"
+          data-ratings="R,HD,9,TV-14,55m"
+          data-desc="Short description about Anime 4..."
+          data-japanese="アニメ4"
+          data-synonyms="Anime 4"
+          data-aired="TBD"
+          data-status="Announced"
+          data-genres="Adventure, Fantasy"
+        >
+          <img src="images/anime4.jpg" alt="Anime 4">
+          <div class="anime-caption">Anime 4</div>
+          <div class="hover-info">
+            <h3 id="hoverTitle">Title Here</h3>
+            <div class="hover-ratings" id="hoverRatings"></div>
+            <p id="hoverDesc"></p>
+            <p><strong>Japanese:</strong> <span id="hoverJapanese"></span></p>
+            <p><strong>Synonyms:</strong> <span id="hoverSynonyms"></span></p>
+            <p><strong>Aired:</strong> <span id="hoverAired"></span></p>
+            <p><strong>Status:</strong> <span id="hoverStatus"></span></p>
+            <p><strong>Genres:</strong> <span id="hoverGenres"></span></p>
+            <button class="watch-now-btn">Watch now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Single hover box reused for all anime cards -->
+      <div class="hover-info" id="hoverInfo">
+        <h3 id="hoverTitle">Title Here</h3>
+        <div class="hover-ratings" id="hoverRatings"></div>
+        <p id="hoverDesc"></p>
+        <p><strong>Japanese:</strong> <span id="hoverJapanese"></span></p>
+        <p><strong>Synonyms:</strong> <span id="hoverSynonyms"></span></p>
+        <p><strong>Aired:</strong> <span id="hoverAired"></span></p>
+        <p><strong>Status:</strong> <span id="hoverStatus"></span></p>
+        <p><strong>Genres:</strong> <span id="hoverGenres"></span></p>
+        <button class="watch-now-btn">Watch now</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
